@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Search, ShoppingCart, Menu, Trash, MinusCircle, PlusCircle } from 'react-feather'; 
 import { Link } from 'react-router-dom';
-import toggleDisplaySearchShop from '../../toggleDisplaySearchShop';
+import toggleDisplaySearchShop from '../toggle/toggleDisplaySearchShop';
 
 // import '../styles/css/navbarStyling.css';
 import '../styles/scss/navbarStyling.scss';
