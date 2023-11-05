@@ -2,27 +2,11 @@ $primary: #b6895b;
 $bg: #010101;
 $wht: #fff;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: 0;
-  text-decoration: none;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: $bg;
-  color: white;
-}
-
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // font-family: "Poppins", sans-serif;
   padding: 1.4rem 5%;
   background-color: rgba(1, 1, 1, 0.8);
   border-bottom: 1px solid #513c28;
