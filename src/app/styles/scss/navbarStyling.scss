@@ -194,20 +194,10 @@ $wht: #fff;
   }
 }
 
-/* Media Query */
-/* Laptop */
-@media only screen and (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
-}
+/* Media Queries */
 
 /* Tablet */
 @media only screen and (max-width: 768px) {
-  html {
-    font-size: 62.5%;
-  }
-
   #display-menu {
     display: inline-block;
   }
@@ -229,12 +219,5 @@ $wht: #fff;
       width: 90%;
       right: 2rem;
     }
-  }
-}
-
-/* Mobile */
-@media only screen and (max-width: 450px) {
-  html {
-    font-size: 55%;
   }
 }

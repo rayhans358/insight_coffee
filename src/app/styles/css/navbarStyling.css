@@ -181,19 +181,8 @@
 
 /* Media Queries */
 
-/* Laptop */
-@media screen and (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
-}
-
 /* Tablet */
 @media screen and (max-width: 768px) {
-  html {
-    font-size: 62.5%;
-  }
-
   #display-menu {
     display: inline-block;
   }
@@ -232,12 +221,5 @@
   .navbar .search-form {
     width: 90%;
     right: 2rem;
-  }
-}
-
-/* Mobile */
-@media screen and (max-width: 450px) {
-  html {
-    font-size: 55%;
   }
 }
