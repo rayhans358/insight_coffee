@@ -1,0 +1,68 @@
+$primary: #b6895b;
+$bg: #010101;
+$wht: #fff;
+
+footer {
+  background-color: $primary;
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+
+  .socials {
+    padding: 1rem 0;
+
+    a {
+      color: $wht;
+      margin: 1rem;
+
+      &:hover {
+        color: $bg;
+      }
+    }
+  }
+
+  .links {
+    margin-bottom: 1rem;
+
+    a {
+      color: $wht;
+      padding: 0.7rem 1rem;
+
+      &:hover {
+        color: $bg;
+      }
+    }
+  }
+
+  .credit {
+    font-size: 1rem;
+
+    a {
+      color: $bg;
+      font-weight: 400;
+    }
+  }
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
