@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import { Search, ShoppingCart, Menu, Trash, MinusCircle, PlusCircle } from 'react-feather'; 
+import { Search, ShoppingCart, Menu, Trash, MinusCircle, PlusCircle, Users } from 'react-feather'; 
 import { Link } from 'react-router-dom';
 import toggleDisplaySearchShop from '../toggle/toggleDisplaySearchShop';
 
 // import '../styles/css/navbarStyling.css';
 import '../styles/scss/navbarStyling.scss';
 
-function Navbar() {
+import productTes from '../assets/logos/insLogo.jpg'
+
+function Navbar({ modal }) {
   useEffect(() => {
     toggleDisplaySearchShop()
   }, []);
@@ -29,6 +31,7 @@ function Navbar() {
       <div className="navbar-extra">
         <Link to="/" id="search-button"><Search /></Link>
         <Link to="/" id="shopping-cart-button"><ShoppingCart /></Link>
+        <Link to="/" id=""><Users /></Link>
         <Link to="/" id="display-menu"><Menu /></Link>
       </div>
 
@@ -42,7 +45,7 @@ function Navbar() {
       {/* Shopping Cart start */}
       <div className="shopping-cart">
         <div className="cart-item">
-          <img src="../../tes1.jpg" alt="Product 1" />
+          <img src={productTes} alt="Product 1" />
           <div className="item-detail">
             <h3>Product 1</h3>
             <div className="item-price">Harga: IDR 30K</div>
