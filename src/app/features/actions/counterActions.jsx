@@ -1,21 +1,21 @@
 // Import All counter Constants Type
 import * as constans from "../constans/counterConstans";
 
-export const increment = (value) => {
+export function increment(value) {
   return {
     type: constans.INC,
     cartCount: value
   }
 };
 
-export const decrement = (value) => {
+export function decrement(value) {
   return {
     type: constans.DEC,
     cartCount: value
   }
 };
 
-export const set_null = (value) => {
+export function set_null(value) {
   return {
     type: constans.SET_NULL,
     cartCount: value

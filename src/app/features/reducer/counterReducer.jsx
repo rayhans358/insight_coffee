@@ -5,7 +5,7 @@ let initialState = {
   cartCount: 0
 };
 
-const counterReducer = (state = initialState, action) => {
+export default function counterReducer(state = initialState, action) {
   switch (action.type) {
     case constans.INC:
       return {
@@ -29,5 +29,3 @@ const counterReducer = (state = initialState, action) => {
       return state
   }
 };
-
-export default counterReducer;

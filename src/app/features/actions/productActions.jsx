@@ -57,7 +57,7 @@ export const toogleTags = (tag) => ({
 // Give delay or debouncing from fetching product 1 second
 let debounceFetchProduct = debounce(getProducts, 1000);
 
-export const fetchProduct = () => {
+export default function fetchProduct() {
   return async (dispatch, getState) => {
     dispatch(startFetchingProduct());// trigger begin of fetching product
 
