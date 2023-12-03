@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Account from './pages/Account';
 import Cart from './pages/Cart';
 import Invoice from './pages/Invoice';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import Navbar from './components/navbarSection';
 // import Footer from './components/footerSection';
 

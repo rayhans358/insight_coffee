@@ -5,7 +5,7 @@ import { config } from "../../config";
 import { put } from "./reqmanager";
 
 // import action setItems from cart
-import { setItems } from "../Features/Cart/actions";
+import { setItems } from "../features/actions/cartActions";
 
 // import store
 import store from "../store";
