@@ -62,11 +62,11 @@ export default function fetchProduct() {
     dispatch(startFetchingProduct());// trigger begin of fetching product
 
     // Initializing parameter
-    let perPage = getState().products.perPage || 10;
-    let currentPage = getState().products.currentPage || 1;
-    let category = getState().products.category || '';
-    let keyword = getState().products.keyword || '';
-    let tags = getState().products.tags || [];
+    let perPage = getState().products?.perPage || 10;
+    let currentPage = getState().products?.currentPage || 1;
+    let category = getState().products?.category || '';
+    let keyword = getState().products?.keyword || '';
+    let tags = getState().products?.tags || [];
 
     const params = {
       limit: perPage,

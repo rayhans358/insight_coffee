@@ -1,0 +1,223 @@
+.product {
+  padding: 7rem 7% 1.4rem;
+}
+
+.product h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.product h2 span {
+  color: #fd8904;
+}
+
+/* Menu Section */
+.product h2 {
+  margin: 1rem;
+}
+
+.product p {
+  text-align: center;
+  max-width: 60rem;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.product .flex {
+  display: flex;
+}
+
+.product .text-center {
+  justify-content: center;
+  margin: 60px 0 0 0;
+}
+
+.product .text-center .text-center2 {
+  border: solid 2px #b6895b;
+  border-radius: 115px;
+  align-items: center;
+  display: inline-flex;
+  padding: 10px 59px;
+}
+
+.product .text-center .text-center2 > span {
+  border-right: solid 1px #b3b3b3;
+  color: #fd8904;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 0 20px 0 0;
+  display: inline-flex;
+}
+
+.product .text-center .text-center2 > div  {
+  display: flex;
+  margin: 0 0 0 20px;
+}
+
+.product .text-center .text-center2 > div > span {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1.56px;
+  line-height: 26px;
+  margin: 0 2rem;
+}
+
+.product .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.product .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.product .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.product .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product .product-icons a:hover {
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.product .product-image {
+  padding: 1rem 0;
+}
+
+.product .product-image img {
+  height: 25rem;
+}
+
+.product .product-content h3 {
+  font-size: 2rem;
+}
+
+.product .product-stars,
+.modal .product-stars {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: var(--primary);
+}
+
+.product .product-stars .star-full,
+.modal .product-stars .star-full {
+  fill: var(--primary);
+}
+
+.product .product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Modal Box */
+/* Item Detail */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.modal .modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animationPopupModal 0.5s;
+}
+
+.modal.closing {
+  animation: animationCloseModal 0.5s;
+}
+
+.modal .modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+.modal .modal-container .close-icon:hover {
+  color: var(--primary);
+}
+
+.modal .modal-container .modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal .modal-container .modal-content img {
+  height: 18rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal .modal-container .modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal .modal-container .modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+/* Modal Animation pop-up */
+@keyframes animationPopupModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+} /* animasi untuk memunculkan dari atas ke bawah */
+
+/* Modal Animation close */
+@keyframes animationCloseModal {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+
+  to {
+    top: -300px;
+    opacity: 0;
+  }
+}

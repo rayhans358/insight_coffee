@@ -1,10 +1,10 @@
 // import dotenv from config
 import { config } from "../../config";
 
-// import get from reqmanager
-import { get } from "./reqmanager";
+// Fetch API using axios
+import axios from "axios";
 
 export async function getCategories() {
-  return await
-    get(`${config.api_host}/api/categories`)
+  return await axios
+    .get(`${config.api_host}/api/categories`)
 };

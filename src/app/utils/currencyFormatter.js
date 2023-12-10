@@ -7,9 +7,10 @@ export function sumPrice(items) {
 };
 
 export function formatRupiah(number) {
-  return new Intl.NumberFormat('en-ID', {
+  return new Intl.NumberFormat('id-ID', {
     style: 'currency',
-    currency: 'IDR'
+    currency: 'IDR',
+    minimumFractionDigits: 0
   })
     .format(number)
     .replace(/[IDR]/gi, '')

@@ -1,9 +1,6 @@
 // import dotenv from config
 import { config } from "../../config";
 
-// import put from reqmanager
-import { put } from "./reqmanager";
-
 // import action setItems from cart
 import { setItems } from "../features/actions/cartActions";
 
@@ -15,9 +12,13 @@ import axios from "axios";
 
 export async function saveCart(token, cart) {
   // Fetching API with method PUT with headers bearer token
-  return await 
-    put(`${config.api_host}/api/carts`, {items: cart})
-}
+  return await axios
+    .put(`${config.api_host}/api/carts`, {items: cart}, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      }
+    })
+};
 
 export async function getCart() {
   // Get token from local storage 
@@ -30,9 +31,9 @@ export async function getCart() {
   const { data } = await axios
     .get(`${config.api_host}/api/carts/`, {
       headers: {
-        authorization: `Bearer ${token}`,
-      },
-    });
+        authorization: `Bearer ${token}`
+      }
+    })
 
   // If fetching success
   if (!data.error) {

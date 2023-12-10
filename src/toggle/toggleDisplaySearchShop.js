@@ -1,4 +1,3 @@
-
 function toggleDisplaySearchShop() {
   // kasi Toggle class active display-menu
   let navbarNav = document.querySelector('.navbar-nav');

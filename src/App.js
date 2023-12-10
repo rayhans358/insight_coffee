@@ -1,31 +1,18 @@
-import { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { listen } from './app/listener';
-import Home from './pages/Home';
-import Account from './pages/Account';
-import Cart from './pages/Cart';
-import Invoice from './pages/Invoice';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import Navbar from './components/navbarSection';
-// import Footer from './components/footerSection';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Product from './pages/Product/Product';
+import About from './pages/About/About';
 
 function App() {
-  // Call Listener from features
-  useEffect(() => {
-    listen()
-  }, []);
-  
   return (
     <div>
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/account' element={<Account/>}/>
-        <Route path='/checkout' element={<Cart/>}/>
-        <Route path='/invoice/:order_id' element={<Invoice/>}/>
-        <Route path='/*' element={<Navigate replace to='/'/>}/>
-      </Routes>
+        <Routes>
+          <Route path='/' exact element={<Home/>}/>
+          <Route path='/products' exact element={<Product/>}/>
+          <Route path='/about' exact element={<About/>}/>
+        </Routes>
       </BrowserRouter>
     </div>
   );

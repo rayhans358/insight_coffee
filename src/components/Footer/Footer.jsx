@@ -1,8 +1,9 @@
 import React from "react";
 import { GitHub, Instagram, Linkedin } from "react-feather";
 
-// import '../styles/css/footerStyling.css';
-import '../styles/scss/footerStyling.css';
+import './footerStyling.css';
+import { Link } from "react-router-dom";
+// import './footerStyling.scss';
 
 function Footer() {
   return (
@@ -18,14 +19,14 @@ function Footer() {
         </div>
 
         <div class="links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/menu">Menu</a>
-          <a href="/contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/products">Product</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
         <div class="credit">
-          <p>Created by <a href="/">InsightCoffee™</a> | &copy; 2023</p>
+          <p>Created by <Link href="/">InsightCoffee™</Link> | &copy; 2023</p>
         </div>
       </footer>
     </div>
