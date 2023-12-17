@@ -1,17 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import './productStyling.css';
-// import menu from '../../assets/images/menu.jpg';
-import kopi from '../../assets/images/kopi1.jpg';
-import { Eye, ShoppingCart, Star, X } from 'react-feather';
-import { Link } from 'react-router-dom';
-import toggleModalBox from '../../toggle/toggleModalBox';
+import ProductDetail from '../../components/Product/ProductDetail/ProductDetail';
+import ProductCard from '../../components/Product/ProductCard/ProductCard';
+import TagList from '../../components/Product/TagList/TagList';
 
 function Product() {
-  useEffect(() => {
-    toggleModalBox()
-  }, []);
 
   return (
     <div>
@@ -34,92 +29,12 @@ function Product() {
           </div>
         </div>
 
-        <div className="row">
-          <div className="product-card">
-            <div className="product-icons">
-              <Link><ShoppingCart/></Link>
-              <Link className='item-detail-button'><Eye/></Link>
-            </div>
-            <div className="product-image">
-              <img src={kopi} alt="Product 1" />
-            </div>
-            <div className="product-content">
-              <h3>Coffee Beans 1</h3>
-              <div className="product-stars">
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-              </div>
-              <div className="product-price">IDR 30K</div>
-            </div>
-          </div>
-          <div className="product-card">
-            <div className="product-icons">
-              <Link><ShoppingCart/></Link>
-              <Link className='item-detail-button'><Eye/></Link>
-            </div>
-            <div className="product-image">
-              <img src={kopi} alt="Product 1"/>
-            </div>
-            <div className="product-content">
-              <h3>Coffee Beans 2</h3>
-              <div className="product-stars">
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star/>
-              </div>
-              <div className="product-price">IDR 30K</div>
-            </div>
-          </div>
-          <div className="product-card">
-            <div className="product-icons">
-              <Link><ShoppingCart/></Link>
-              <Link className='item-detail-button'><Eye/></Link>
-            </div>
-            <div className="product-image">
-              <img src={kopi} alt="Product 1"/>
-            </div>
-            <div className="product-content">
-              <h3>Coffee Beans 3</h3>
-              <div className="product-stars">
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star/>
-                <Star/>
-              </div>
-              <div className="product-price">IDR 30K</div>
-            </div>
-          </div>
-        </div>
+        <TagList/>
+        <ProductCard/>
       </section>
 
       {/* Modal Box Item Detail Start */}
-      <div className="modal" id="item-detail-modal">
-        <div className="modal-container">
-          <X className="close-icon"/>
-          <div className="modal-content">
-            <img src={kopi} alt="Product 1"/>
-            <div className="product-content">
-              <h3>Product 1</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt alias facere nesciunt repudiandae vitae cumque quaerat. Odio veniam ullam nesciunt vitae explicabo dolore iusto. Similique.</p>
-              <div className="product-stars">
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star className='star-full'/>
-                <Star/>
-              </div>
-              <div className="product-price">IDR 30K</div>
-              <Link><ShoppingCart/> <span>Add to cart</span></Link> 
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProductDetail/>
       <Footer/>
     </div>
   );

@@ -12,7 +12,7 @@ export async function getOrder(params) {
   
   // Fetching API with method GET with headers bearer token
   return await axios
-    .get(`${config.api_host}/api/orders`, {
+    .get(`${config.api_host}/orders`, {
       params: {
         limit: params.limit,
         skip: params.page * params.limit - params.limit
@@ -31,7 +31,7 @@ export async function createOrder(payload) {
   
   // Fetching API with method POST with headers bearer token
   return await axios
-    .post(`${config.api_host}/api/orders`, payload, {
+    .post(`${config.api_host}/orders`, payload, {
       headers: {
         authorization: `Bearer ${token}`,
       }

@@ -9,7 +9,7 @@ function Footer() {
   return (
     <div>
       <footer>
-        <div class="socials">
+        <div className="socials">
           <a href="https://www.instagram.com/rayhans_najib/"
             ><Instagram /></a>
           <a href="https://www.linkedin.com/in/rayhansnajib/"
@@ -18,14 +18,14 @@ function Footer() {
             ><GitHub /></a>
         </div>
 
-        <div class="links">
+        <div className="links">
           <Link to="/">Home</Link>
           <Link to="/products">Product</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </div>
 
-        <div class="credit">
+        <div className="credit">
           <p>Created by <Link href="/">InsightCoffee™</Link> | &copy; 2023</p>
         </div>
       </footer>

@@ -6,5 +6,5 @@ import axios from "axios";
 
 export async function getProducts(params) {
   return await axios
-    .get(`${config.api_host}/api/products`, { params })
+    .get(`${config.api_host}/products`, { params })
 };

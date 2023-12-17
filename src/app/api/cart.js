@@ -13,7 +13,7 @@ import axios from "axios";
 export async function saveCart(token, cart) {
   // Fetching API with method PUT with headers bearer token
   return await axios
-    .put(`${config.api_host}/api/carts`, {items: cart}, {
+    .put(`${config.api_host}/carts`, {items: cart}, {
       headers: {
         authorization: `Bearer ${token}`,
       }
@@ -29,7 +29,7 @@ export async function getCart() {
 
   // Fetching API with method GET with headers bearer token and get data
   const { data } = await axios
-    .get(`${config.api_host}/api/carts/`, {
+    .get(`${config.api_host}/carts/`, {
       headers: {
         authorization: `Bearer ${token}`
       }

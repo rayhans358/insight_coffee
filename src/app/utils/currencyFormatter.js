@@ -13,7 +13,4 @@ export function formatRupiah(number) {
     minimumFractionDigits: 0
   })
     .format(number)
-    .replace(/[IDR]/gi, '')
-    .replace(/(\.+\d{2})/, '')
-    .trimStart()
 };

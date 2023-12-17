@@ -1,0 +1,92 @@
+/* Modal Box */
+/* Item Detail */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.modal .modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: #010101;
+  margin: 14.5% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animationPopupModal 0.5s;
+}
+
+.modal.closing {
+  animation: animationCloseModal 0.5s;
+}
+
+.modal .modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+.modal .modal-container .close-icon:hover {
+  color: #b6895b;
+}
+
+.modal .modal-container .modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal .modal-container .modal-content img {
+  height: 18rem;
+  width: 18rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal .modal-container .modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+  font-weight: 300;
+}
+
+.modal .modal-container .modal-content .shopping-cart {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: #b6895b;
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+/* Modal Animation pop-up */
+@keyframes animationPopupModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+} /* animasi untuk memunculkan dari atas ke bawah */
+
+/* Modal Animation close */
+@keyframes animationCloseModal {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+
+  to {
+    top: -300px;
+    opacity: 0;
+  }
+}

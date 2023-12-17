@@ -12,7 +12,7 @@ export async function getAddress(params) {
   
   // Fetching API with method GET with params limit & skip and with headers bearer token
   return await Axios
-    .get(`${config.api_host}/api/delivery-address`, {
+    .get(`${config.api_host}/delivery-address`, {
     params: {
       limit: params.limit,
       skip: params.page * params.limit - params.limit},
@@ -30,7 +30,7 @@ export async function createAddress(payload) {
   
   // Fetching API with method POST with payload and with headers bearer token
   return await axios
-    .post(`${config.api_host}/api/delivery-address`, payload, {
+    .post(`${config.api_host}/delivery-address`, payload, {
       headers: {
         authorization: `Bearer ${token}`
       }
@@ -39,5 +39,5 @@ export async function createAddress(payload) {
 
 export async function getLocation(tingkat, kodeInduk) {
   return await axios
-    .get(`https://insight-coffee-be.vercel.app/api/${tingkat}?kode_induk=${kodeInduk}`)
+    .get(`https://insight-coffee-be.vercel.app/${tingkat}?kode_induk=${kodeInduk}`)
 };

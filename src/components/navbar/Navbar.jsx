@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Search, ShoppingCart, Menu, Trash, MinusCircle, PlusCircle, Users } from 'react-feather'; 
+import { Search, ShoppingCart, Menu, Users, Trash2 } from 'react-feather'; 
 import { Link } from 'react-router-dom';
 import toggleDisplaySearchShop from '../../toggle/toggleDisplaySearchShop';
 
@@ -9,6 +9,11 @@ import './navbarStyling.css';
 import productTes from '../../assets/logos/insLogo.jpg';
 
 function Navbar() {
+  const multiply = String.fromCharCode(215); // tanda kali (×)
+  const plus = String.fromCharCode(43); // tanda tambah (+)
+  const minus = String.fromCharCode(8722); // tanda kurang (−)
+  const equal = String.fromCharCode(61); // sama dengan (=)
+
   useEffect(() => {
     toggleDisplaySearchShop()
   }, []);
@@ -44,35 +49,18 @@ function Navbar() {
           <div className="cart-item">
             <img src={productTes} alt="Product 1" />
             <div className="item-detail">
+                <Trash2 className='remove-item'/>
               <h3>Product 1</h3>
-              <div className="item-price">Harga: IDR 30K</div>
-              <div className="total-detail">Jumlah</div>
-              <div className="total-product">
-                <MinusCircle className="amount-product"/>  <h2>1</h2>  <PlusCircle className="amount-product"/>
+              <div className="item-price">
+                <span>Rupiah {multiply} </span>
+                <button id="minus">{minus}</button>
+                <span> quantity </span>
+                <button id="plus">{plus}</button> {equal}
+                <span> rupiah</span>
               </div>
             </div>
-            <Trash className="remove-item"/>
           </div>
-          <div className="cart-item">
-            <img src="../../tes1.jpg" alt="Product 2" />
-            <div className="item-detail">
-              <h3>Product 2</h3>
-              <div className="item-price">Harga: IDR 30K</div>
-              <div className="total-detail">Jumlah</div>
-              <div className="total-product"><MinusCircle className="amount-product"/>  <h2>1</h2>  <PlusCircle className="amount-product"/></div>
-            </div>
-            <Trash className="remove-item"/>
-          </div>
-          <div className="cart-item">
-            <img src="../../tes1.jpg" alt="Product 3" />
-            <div className="item-detail">
-              <h3>Product 3</h3>
-              <div className="item-price">Harga: IDR 30K</div>
-              <div className="total-detail">Jumlah</div>
-              <div className="total-product"><MinusCircle className="amount-product"/>  <h2>1</h2>  <PlusCircle className="amount-product"/></div>
-            </div>
-            <Trash className="remove-item"/>
-          </div>
+          <h4>Total : <span>rupiah</span></h4>
         </div>
         {/* Shopping Cart end */}
       </nav>

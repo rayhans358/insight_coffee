@@ -6,5 +6,5 @@ import axios from "axios";
 
 export async function getCategories() {
   return await axios
-    .get(`${config.api_host}/api/categories`)
+    .get(`${config.api_host}/categories`)
 };
