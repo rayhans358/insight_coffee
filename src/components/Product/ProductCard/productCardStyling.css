@@ -49,7 +49,7 @@
 .row .product-stars,
 .modal .product-stars {
   font-size: 1.7rem;
-  padding: 0.8rem;
+  padding: 0.2rem 0.8rem;
   color: var(--primary);
 }
 
@@ -69,7 +69,7 @@
   color: #fff;
   font-size: 1.3rem;
   padding: 4px 8px;
-  margin-right: 4px;
+  margin-top: 0.5rem;
   border-radius: 4px;
 }
 

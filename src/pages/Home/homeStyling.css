@@ -1,3 +1,9 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+  --wht: #fff;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -27,7 +33,7 @@
 
 .hero .content h1 {
   font-size: 4.5em;
-  color: #fff;
+  color: var(--wht);
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
   line-height: 1.2;
 }
@@ -50,15 +56,11 @@
   display: inline-flex;
   padding: 1rem 3rem;
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--wht);
   background-color: var(--primary);
   border-radius: 0.7rem;
   box-shadow: 1px 1px 3px;
   box-shadow: rgba(1, 1, 3, 0.5);
-}
-
-.hero .content .cta span {
-  display: flex;
 }
 
 /* About Section */
@@ -155,7 +157,7 @@
   padding: 2rem;
   font-size: 1.7rem;
   background: none;
-  color: #fff;
+  color: var(--wht);
 }
 
 .contact .row form .button {
@@ -163,7 +165,7 @@
   display: inline-block;
   padding: 1rem 3rem;
   font-size: 1.7rem;
-  color: #fff;
+  color: var(--wht);
   background-color: var(--primary);
   cursor: pointer;
 }

@@ -20,31 +20,40 @@ export default function cartReducer(state = initialState, { type, payload }) {
         return state.map((item) => ({
           ...item,
           qty: item._id === payload.item._id ? item.qty + 1 : item.qty
-        }))
+        }));
       } else {
         // If the same item dispatches to reducer but there's no item or different item in local storage
         // Add the dispatched item and the item quantity is 1
-        return [ ...state, { ...payload.item, qty: 1}]
-      }
+        return [ ...state, { ...payload.item, qty: 1}];
+      };
     
-    case constans.REMOVE_ITEM:
+    case constans.REDUCE_ITEM:
       // If item from local storage already exists and the same item dispatches to reducer
       // Just decrement the quantity
       return state
-        .map((item) => ({
-          ...item,
-          qty: item._id === payload.item._id ? item.qty - 1 : item.qty
-        }))
+        .map((item) => {
+          if (item._id === payload.item._id) {
+            return {
+              ...item,
+              qty: item.qty - 1 >= 0 ? item.qty - 1 : 0
+            };
+          }
+          return item
+        })
         // If item quantity is zero, the item will be removed
-        .filter((item) => item.qty > 0)
+        .filter((item) => item.qty > 0);
     
     case constans.CLEAR_ITEM:
-      return []
+      return state
+        .filter((item) => item._id !== payload.item._id);
+
+    case constans.CLEAR_ALL_ITEM:
+      return [];
     
     case constans.SET_ITEM:
-      return payload.items
+      return payload.items;
   
     default:
-      return state
-  }
+      return state;
+  };
 };

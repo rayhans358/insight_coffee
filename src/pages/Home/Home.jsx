@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
-import Navbar from '../../components/Navbar/Navbar';
+import { Link } from 'react-router-dom';
 import { AtSign, Phone, User } from 'react-feather';
-import Footer from '../../components/Footer/Footer';
-import coffee2 from '../../assets/background/coffee2.jpg';
+
 import './homeStyling.css';
+
+import coffee2 from '../../assets/background/coffee2.jpg';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 
 function Home() {
@@ -14,7 +16,7 @@ function Home() {
       {/* Hero Section start */}
       <section className="hero" id="home">
         <main className="content">
-          <h1>Selamat datang di <span>InsightCoffee™</span></h1>
+          <h1>Welcome to <span>InsightCoffee™</span></h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorem.
           </p>

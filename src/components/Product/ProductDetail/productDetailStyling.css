@@ -16,7 +16,7 @@
   position: relative;
   background-color: #fefefe;
   color: #010101;
-  margin: 14.5% auto;
+  margin: auto;
   padding: 1.2rem;
   border: 1px solid #666;
   width: 80%;
@@ -41,6 +41,11 @@
   flex-wrap: nowrap;
 }
 
+.modal .modal-container .modal-content .product-content {
+  text-align: center;
+  padding-right: 5rem;
+}
+
 .modal .modal-container .modal-content img {
   height: 18rem;
   width: 18rem;
@@ -53,6 +58,7 @@
   line-height: 1.8rem;
   margin-top: 1.2rem;
   font-weight: 300;
+  text-align: justify;
 }
 
 .modal .modal-container .modal-content .shopping-cart {
@@ -61,7 +67,7 @@
   width: 12rem;
   background-color: #b6895b;
   color: #fff;
-  margin-top: 1rem;
+  margin: 1rem auto;
   padding: 1rem 1.6rem;
 }
 

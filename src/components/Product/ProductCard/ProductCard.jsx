@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Eye, ShoppingCart, Star } from "react-feather";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+
+import './productCardStyling.css';
+
+import { config } from "../../../config";
 import { getProducts } from "../../../app/api/product";
 import { formatRupiah } from "../../../app/utils/currencyFormatter";
-import { config } from "../../../config";
+import { addItem } from "../../../app/features/actions/cartActions";
 import ProductDetail from "../ProductDetail/ProductDetail";
-import './productCardStyling.css';
 
 function ProductCard() {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const dispatch = useDispatch();
   
   useEffect(() => {
     async function fetchProducts() {
       try {
         const productsData = await getProducts();
         setProducts(productsData.data.data);
+        console.log(productsData.data);
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -23,12 +29,16 @@ function ProductCard() {
     fetchProducts();
   }, []);
 
+  function addProduct(product) {
+    dispatch(addItem(product))
+  };
+
   return (
     <div className="row">
       {products.map((product, index) => (
         <div key={index} className="product-card">
           <div className="product-icons">
-            <Link onClick={() => setSelectedProduct(product)}><ShoppingCart/></Link>
+            <Link onClick={() => addProduct(product)}><ShoppingCart/></Link>
             <Link className='item-detail-button' onClick={() => setSelectedProduct(product)}><Eye/></Link>
           </div>
           <div className="product-image">

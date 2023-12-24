@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { ShoppingCart, Star, X } from "react-feather";
 import { Link } from "react-router-dom";
-import toggleModalBox from "../../../toggle/toggleModalBox";
+import { useDispatch } from "react-redux";
+
 import "./productDetailStyling.css";
-// import kopi from "../../../assets/images/kopi1.jpg";
+
 import { config } from "../../../config";
+import toggleModalBox from "../../../toggle/toggleModalBox";
 import { formatRupiah } from "../../../app/utils/currencyFormatter";
+import { addItem } from "../../../app/features/actions/cartActions";
 
 function ProductDetail({ product }) {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     toggleModalBox()
     setShowModal(true)
   }, []);
+
+  function addProduct(product) {
+    dispatch(addItem(product))
+  };
 
   if (!product || !product.image_url) {
     return null
@@ -34,7 +42,7 @@ function ProductDetail({ product }) {
               ))}
             </div>
             <div className="product-price">{formatRupiah(product.price)}</div>
-            <Link className="shopping-cart"><ShoppingCart/> <span>Add to cart</span></Link> 
+            <Link className="shopping-cart" onClick={() => addProduct(product)}><ShoppingCart/> <span>Add to cart</span></Link> 
           </div>
         </div>
       </div>

@@ -8,22 +8,29 @@ export function addItem(item) {
     payload: {
       item: {
         ...item,
-        product: item.product || item
+        qty: 1
       }
     }
   }
 };
 
-export function removeItem(item) {
+export function reduceItem(item) {
   return {
-    type: constans.REMOVE_ITEM,
+    type: constans.REDUCE_ITEM,
     payload: { item: item }
   }
 };
 
-export function clearItem() {
+export function clearItem(item) {
   return {
-    type: constans.CLEAR_ITEM
+    type: constans.CLEAR_ITEM,
+    payload: { item: item }
+  }
+};
+
+export function clearAllItem() {
+  return {
+    type: constans.CLEAR_ALL_ITEM
   }
 };
 
