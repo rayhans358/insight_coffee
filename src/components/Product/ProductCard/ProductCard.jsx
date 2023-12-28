@@ -21,7 +21,6 @@ function ProductCard() {
       try {
         const productsData = await getProducts();
         setProducts(productsData.data.data);
-        console.log(productsData.data);
       } catch (error) {
         console.error('Error fetching products:', error);
       }

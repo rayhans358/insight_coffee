@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/Footer';
 import './productStyling.css';
 import ProductDetail from '../../components/Product/ProductDetail/ProductDetail';
 import ProductCard from '../../components/Product/ProductCard/ProductCard';
-import CategoryList from '../../components/Product/CategoryList/CategoryList';
+import CategoryTag from '../../components/Product/CategoryTag/CategoryTag';
 
 function Product() {
 
@@ -29,7 +29,7 @@ function Product() {
           </div>
         </div>
 
-        <CategoryList/>
+        <CategoryTag/>
         <ProductCard/>
       </section>
 

@@ -4,7 +4,7 @@ import { config } from "../../config";
 // Fetch API using axios
 import axios from "axios";
 
-export async function getTagsByCategories(category) {
+export async function getTags() {
   return await axios
-    .get(`${config.api_host}/tags/${category}`)
+    .get(`${config.api_host}/tags`)
 };

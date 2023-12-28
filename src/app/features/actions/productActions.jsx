@@ -49,9 +49,9 @@ export const setTags = (tags) => ({
   payload: { tags }
 });
 
-export const toogleTags = (tag) => ({
+export const toggleTags = (tags) => ({
   type: constans.TOGGLE_TAGS,
-  payload: { tag }
+  payload: { tags }
 })
 
 // Give delay or debouncing from fetching product 1 second
