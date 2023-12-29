@@ -1,4 +1,3 @@
-// Import All Product Constants Type
 import * as constans from "../constans/productConstans";
 
 const statusList = {
@@ -8,8 +7,6 @@ const statusList = {
   error: 'error'
 };
 
-//  Initial State from Product Reducer
-// Similar to useState but globally state
 const initialState = {
   data: [],
   currentPage: 1,
@@ -21,7 +18,6 @@ const initialState = {
   status: statusList.idle
 };
 
-// Product Reducer
 export default function productReducer (state = initialState, { type, payload }) {
   switch (type) {
     case constans.START_FETCHING_PRODUCT:

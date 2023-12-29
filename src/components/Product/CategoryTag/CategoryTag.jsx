@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 import "./categoryTagStyling.css";
 
 import { getCategories } from "../../../app/api/category";
 import { getTags } from "../../../app/api/tag";
-import { useDispatch } from "react-redux";
 import { setCategory, setTags } from "../../../app/features/actions/productActions";
 
 function CategoryTag() {
