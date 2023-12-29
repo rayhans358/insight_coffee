@@ -1,15 +1,11 @@
-// Import All Product Constants Type
 import * as constans from "../constans/productConstans";
 
-// Import debounce to give delay of fetching product
 import debounce from "debounce-promise";
 
-// Import Fetch API to get all products
 import { getProducts } from "../../api/product";
 
-// Export all actions
 export const startFetchingProduct = () => ({
-  type: constans.ERROR_FETCHING_PRODUCT
+  type: constans.START_FETCHING_PRODUCT
 });
 
 export const errorFetchingProduct = () => ({
@@ -41,7 +37,7 @@ export const setCategory = (category) => ({
 
 export const setKeyword = (keyword) => ({
   type: constans.SET_KEYWORD,
-  payload: { keyword: keyword }
+  payload: { keyword }
 });
 
 export const setTags = (tags) => ({
@@ -49,36 +45,30 @@ export const setTags = (tags) => ({
   payload: { tags }
 });
 
-export const toggleTags = (tags) => ({
+export const toggleTags = (tag) => ({
   type: constans.TOGGLE_TAGS,
-  payload: { tags }
+  payload: { tag }
 })
 
-// Give delay or debouncing from fetching product 1 second
 let debounceFetchProduct = debounce(getProducts, 1000);
 
 export default function fetchProduct() {
   return async (dispatch, getState) => {
-    dispatch(startFetchingProduct());// trigger begin of fetching product
+    dispatch(startFetchingProduct());
 
-    // Initializing parameter
-    let perPage = getState().products?.perPage || 10;
-    let currentPage = getState().products?.currentPage || 1;
-    let category = getState().products?.category || '';
-    let keyword = getState().products?.keyword || '';
-    let tags = getState().products?.tags || [];
+    let state = getState().products || {};
+    let { perPage, currentPage, category, keyword, tags } = state;
 
     const params = {
-      limit: perPage,
-      skip: ( currentPage * perPage ) - perPage,
-      category,
-      name: keyword,
-      tags
+      limit: perPage || 10,
+      skip: (currentPage || 1) * (perPage || 10) - (perPage || 10),
+      category: category || '',
+      name: keyword || '',
+      tags: tags || []
     };
 
     try {
       let { data: { data, count }} = await debounceFetchProduct(params)
-
       dispatch(successFetchingProduct({ data,count }));
 
     } catch (error) {

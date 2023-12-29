@@ -10,6 +10,7 @@ import { getProducts } from "../../../app/api/product";
 import { formatRupiah } from "../../../app/utils/currencyFormatter";
 import { addItem } from "../../../app/features/actions/cartActions";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import CategoryTag from "../CategoryTag/CategoryTag";
 
 function ProductCard() {
   const [products, setProducts] = useState([]);
@@ -21,10 +22,12 @@ function ProductCard() {
       try {
         const productsData = await getProducts();
         setProducts(productsData.data.data);
+
       } catch (error) {
         console.error('Error fetching products:', error);
       }
     }
+    
     fetchProducts();
   }, []);
 
@@ -33,6 +36,9 @@ function ProductCard() {
   };
 
   return (
+    <>
+    <CategoryTag/>
+    
     <div className="row">
       {products.map((product, index) => (
         <div key={index} className="product-card">
@@ -59,6 +65,7 @@ function ProductCard() {
         </div>
       ))}
     </div>
+    </>
   )
 };
 
