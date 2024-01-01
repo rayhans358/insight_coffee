@@ -7,7 +7,7 @@ import { getCategories } from "../../../app/api/category";
 import { getTags } from "../../../app/api/tag";
 import { setCategory, setTags } from "../../../app/features/actions/productActions";
 
-function CategoryTag() {
+function CategoryTag({ fetchProductsByCategory, fetchProductsByTag, setProducts }) {
   const [categories, setCategories] = useState([]);
   const [label, setLabel] = useState([]);
   const dispatch = useDispatch();
@@ -31,14 +31,34 @@ function CategoryTag() {
     fetchCategoriesAndLabel();
   }, []);
 
-  function handleCategory(categoryId) {
-    dispatch(setCategory(categoryId))
-    console.log(dispatch(setCategory(categoryId)));
+  async function handleCategory(categoryId) {
+    try {
+      dispatch(setCategory(categoryId))
+      const products = await fetchProductsByCategory(categoryId)
+      setProducts(products.data)
+      console.log(dispatch(setCategory(categoryId)), '<<< dispatch category')
+      console.log(setProducts(products.data), '<<< fetch category')
+      return products.data;
+
+    } catch (error) {
+      console.error('Error fetching products by category:', error);
+      throw error;
+    }
   };
 
-  function handleTags(tags) {
-    dispatch(setTags(tags))
-    console.log(dispatch(setTags(tags)));
+  async function handleTags(tagId) {
+    try {
+      dispatch(setTags([tagId]));
+      const products = await fetchProductsByTag(tagId)
+      setProducts(products.data)
+      console.log(dispatch(setTags([tagId])), '<<< dispatch tag')
+      console.log(setProducts(products.data), '<<< fetch tag')
+      return products.data;
+      
+    } catch (error) {
+      console.error('Error fetching products by tag:', error);
+      throw error;
+    }
   };
 
   return (
@@ -48,7 +68,7 @@ function CategoryTag() {
       <h3>Category</h3>
       {Array.isArray(categories) ? (
         categories.map((category, index) => (
-          <p key={index} onClick={() => handleCategory(category)}>{category.name}</p>
+          <p key={index} onClick={() => handleCategory(category.name)}>{category.name}</p>
         ))
       ) : (
         <p>No categories found</p>
@@ -59,8 +79,8 @@ function CategoryTag() {
     <div className="tag-list">
       <h3>Tags</h3>
       {Array.isArray(label) ? (
-        label.map((tag, index) => (
-          <p key={index} onClick={() => handleTags(tag)}>{tag.name}</p>
+        label.map((tags, index) => (
+          <p key={index} onClick={() => handleTags(tags.name)}>{tags.name}</p>
         ))
       ) : (
         <p>No tags found</p>
