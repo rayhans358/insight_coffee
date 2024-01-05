@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, ShoppingCart, Menu, Users, Trash2 } from 'react-feather'; 
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,11 +10,13 @@ import { config } from '../../config';
 import toggleDisplaySearchShop from '../../toggle/toggleDisplaySearchShop';
 import { addItem, clearAllItem, clearItem, reduceItem } from '../../app/features/actions/cartActions';
 import { formatRupiah, sumPrice } from '../../app/utils/currencyFormatter';
+import { setKeyword } from '../../app/features/actions/productActions';
 
 function Navbar() {
   const dispatch = useDispatch();
   const location = useLocation();
   const cartItems = useSelector((state) => state.cart);
+  const [searchTerm, setSearchTerm] = useState('');
   const multiply = String.fromCharCode(215); // (×)
   const plus = String.fromCharCode(43); // (+)
   const minus = String.fromCharCode(8722); // (−)
@@ -23,6 +25,13 @@ function Navbar() {
   useEffect(() => {
     toggleDisplaySearchShop();
   }, []);
+
+  async function handleSearch(event) {
+    const searchTerm = event.target.value
+    setSearchTerm(searchTerm);
+    dispatch(setKeyword(searchTerm));
+    // console.log(searchTerm, 'trim navbar');
+  };
 
   function addCart(item) {
     dispatch(addItem(item))
@@ -73,7 +82,8 @@ function Navbar() {
 
         {/* Search Form start */}
         <div className="search-form">
-          <input type="search" id="search-box" placeholder="Search product here ...." />
+          <input type="search" id="search-box" placeholder="Search product here ...." value={searchTerm}
+            onChange={handleSearch} />
           <label htmlFor="search-box"><Search /></label>
         </div>
         {/* Search Form end */}

@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import Product from './pages/Product/Product';
 import About from './pages/About/About';
 import { listen } from './app/listener';
+import Contact from './pages/Contact/Contact';
 
 function App() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' exact element={<Home/>}/>
           <Route path='/products' exact element={<Product/>}/>
           <Route path='/about' exact element={<About/>}/>
+          <Route path='/contact' exact element={<Contact/>}/>
         </Routes>
       </BrowserRouter>
     </div>

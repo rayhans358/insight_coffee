@@ -37,7 +37,7 @@ export const setCategory = (category) => ({
 
 export const setKeyword = (keyword) => ({
   type: constans.SET_KEYWORD,
-  payload: { keyword }
+  payload: { keyword: keyword }
 });
 
 export const setTags = (tags) => ({

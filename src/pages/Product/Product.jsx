@@ -6,7 +6,6 @@ import ProductDetail from '../../components/Product/ProductDetail/ProductDetail'
 import ProductCard from '../../components/Product/ProductCard/ProductCard';
 
 function Product() {
-
   return (
     <div>
       <Navbar/>
@@ -27,7 +26,6 @@ function Product() {
             </div>
           </div>
         </div>
-
         <ProductCard/>
       </section>
 

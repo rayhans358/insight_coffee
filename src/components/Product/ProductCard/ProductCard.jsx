@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Eye, ShoppingCart, Star } from "react-feather";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import './productCardStyling.css';
@@ -10,11 +10,12 @@ import { formatRupiah } from "../../../app/utils/currencyFormatter";
 import { addItem } from "../../../app/features/actions/cartActions";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import CategoryTag from "../CategoryTag/CategoryTag";
-import { getProducts, getProductsCategoryTag } from "../../../app/api/product";
+import { getCategoryTagSearch, getProducts } from "../../../app/api/product";
 
 function ProductCard() {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const keyword = useSelector((state) => state.product?.keyword || '');
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -23,19 +24,33 @@ function ProductCard() {
         const productsData = await getProducts();
         setProducts(productsData.data.data);
         // console.log(productsData.data.data, 'all product');
-
+  
       } catch (error) {
         console.error('Error fetching products:', error);
       }
     }
-    
-    fetchProducts();
-  }, []);
+
+    async function fetchProductsWithKeyword(keywordParams) {
+      try {
+        const productsData = await getCategoryTagSearch({ keyword: keywordParams });
+        setProducts(productsData.data);
+        // console.log(productsData.data, 'search product');
+      } catch (error) {
+        console.error('Error fetching products by keyword:', error);
+      }
+    }
+
+    if (keyword) {
+      fetchProductsWithKeyword(keyword);
+    } else {
+      fetchProducts();
+    }
+  }, [keyword]);
 
   async function fetchProductsByCategory(categoryId) {
     try {
-      const productsData = await getProductsCategoryTag({ category: categoryId })
-      console.log(productsData.data, 'category data')
+      const productsData = await getCategoryTagSearch({ category: categoryId })
+      // console.log(productsData.data, 'category data')
       return productsData.data;
 
     } catch (error) {
@@ -45,8 +60,8 @@ function ProductCard() {
 
   async function fetchProductsByTag(tagId) {
     try {
-      const productsData = await getProductsCategoryTag({ tag: tagId })
-      console.log(productsData.data, 'tags data')
+      const productsData = await getCategoryTagSearch({ tag: tagId })
+      // console.log(productsData.data, 'tags data')
       return productsData.data;
 
     } catch (error) {

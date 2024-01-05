@@ -9,7 +9,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url(../../assets/background/coffee1.jpg);
+  background-image: url(../../assets/background/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -77,7 +77,8 @@
 }
 
 .about h2 span,
-.contact h2 span {
+.contact h2 span,
+.contact .row form h2 span {
   color: #fd8904;
 }
 
@@ -172,7 +173,6 @@
 
 /* Media Query Tablet */
 @media screen and (max-width: 768px) {
-  /* About Section */
   .about .row {
     flex-wrap: wrap;
   }

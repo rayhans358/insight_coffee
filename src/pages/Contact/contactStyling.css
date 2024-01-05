@@ -1,0 +1,205 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+  --wht: #fff;
+}
+
+/* Contact Form */
+.contact {
+  padding: 7rem 7% 1.4rem;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  margin: 1rem;
+}
+
+.contact h2 span,
+.contact .row form h2 span,
+.testimoni h2 span {
+  color: #fd8904;
+}
+
+.contact p {
+  text-align: center;
+  max-width: 60rem;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Form Section */
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: var(--wht);
+}
+
+.contact .row form .button {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: var(--wht);
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Testimoni */
+.testimoni{
+  margin-top: 20px;
+}
+
+.testimoni .head-testi {
+  padding: 1rem;
+}
+
+.testimoni .head-testi h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  margin: 1rem;
+}
+
+.testimoni .head-testi p {
+  text-align: center;
+  max-width: 35rem;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.5;
+  border: 2px solid var(--wht);
+  border-radius: 60px;
+}
+
+.testimoni .body-testi {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 5px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.testimoni .body-testi .testi-name {
+  text-align: center;
+}
+
+.testimoni .body-testi .testi-name .name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.testimoni .body-testi .testi-image {
+  margin: 20px 0;
+}
+.center {
+  text-align: center;
+}
+
+.testimoni .body-testi .testi-image img {
+  border-radius: 50%;
+  width: 25%;
+}
+
+.testimoni .body-testi .testi-text {
+  box-shadow: 0 4px 8px rgba(78, 78, 78, 0.1);
+  border-radius: 15px;
+  background: #fbfbfb;
+  color: #18191f;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  max-height: 192px;
+  height: 192px;
+  overflow: hidden;
+  padding: 15px 35px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  position: flex;
+  text-align: justify;
+}
+
+.testimoni .body-testi .testi-text::before {
+  content: "\201C";
+  font-size: 60px;
+  position: absolute;
+  left: 15px;
+  top: 0.1px;
+  color: #000000;
+}
+
+.testimoni .body-testi .testi-text::after {
+  content: "\201C";
+  font-size: 60px;
+  position: absolute;
+  right: 13px;
+  top: 1.8em;
+  color: #000000;
+}
+
+.testimoni .body-testi .testi-desc::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #fefefe00;
+  position: absolute;
+  display: flex;
+  margin: auto;
+  left: 52%;
+  transform: translateX(-85%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #fbfbfb transparent transparent transparent;
+}
+
+/* Media Query Tablet */
+@media screen and (max-width: 768px) {
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+}

@@ -4,7 +4,7 @@ import { AtSign, Phone, User } from 'react-feather';
 
 import './homeStyling.css';
 
-import coffee2 from '../../assets/background/coffee2.jpg';
+import coffee1 from '../../assets/images/coffee1.jpg';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
@@ -33,7 +33,7 @@ function Home() {
 
         <div className="row">
           <div className="about-img">
-            <img src={coffee2} alt='About Us' />
+            <img src={coffee1} alt='About Us' />
           </div>
           <div className="content">
             <h3>Why choose coffee at our place?</h3>
@@ -65,6 +65,7 @@ function Home() {
           ></iframe>
 
           <form action="">
+            <h2><span>Kritik</span> dan <span>Saran</span></h2>
             <div className="input-group">
               <User/>
               <input type="text" placeholder="Name" />

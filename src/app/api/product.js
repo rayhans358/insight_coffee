@@ -9,13 +9,15 @@ export async function getProducts(params) {
     .get(`${config.api_host}/products`, { params })
 };
 
-export async function getProductsCategoryTag(filter) {
+export async function getCategoryTagSearch(filter) {
   let endpoint = '';
 
   if (filter.category) {
     endpoint += `/products?category=${filter.category}`;
   } else if (filter.tag) {
-    endpoint += `/products?tags=${filter.tag}`
+    endpoint += `/products?tags=${filter.tag}`;
+  } else if(filter.keyword){
+    endpoint += `/products?search=${filter.keyword}`;
   } else {
     throw new Error('Invalid filter');
   };
@@ -26,20 +28,4 @@ export async function getProductsCategoryTag(filter) {
   } catch (err) {
     throw new Error('Error fetching filtered products')
   }
-}
-/*
-export async function getProducts(params) {
-  return await axios
-    .get(`${config.api_host}/products`, { params })
 };
-
-export async function getProductsByCategory(categoryId) {
-  return await axios
-    .get(`${config.api_host}/products/category/${categoryId}`);
-};
-
-export async function getProductsByTag(tagId) {
-  return await axios
-    .get(`${config.api_host}/products/tag/${tagId}`);
-};
-*/

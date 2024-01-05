@@ -35,30 +35,24 @@ function CategoryTag({ fetchProductsByCategory, fetchProductsByTag, setProducts 
     try {
       dispatch(setCategory(categoryId))
       const products = await fetchProductsByCategory(categoryId)
-      setProducts(products.data)
-      console.log(dispatch(setCategory(categoryId)), '<<< dispatch category')
-      console.log(setProducts(products.data), '<<< fetch category')
-      return products.data;
+      setProducts(products);
+      // console.log(products, 'category');
 
     } catch (error) {
       console.error('Error fetching products by category:', error);
-      throw error;
-    }
+    };
   };
 
   async function handleTags(tagId) {
     try {
       dispatch(setTags([tagId]));
       const products = await fetchProductsByTag(tagId)
-      setProducts(products.data)
-      console.log(dispatch(setTags([tagId])), '<<< dispatch tag')
-      console.log(setProducts(products.data), '<<< fetch tag')
-      return products.data;
+      setProducts(products);
+      // console.log(products, 'tag');
       
     } catch (error) {
       console.error('Error fetching products by tag:', error);
-      throw error;
-    }
+    };
   };
 
   return (

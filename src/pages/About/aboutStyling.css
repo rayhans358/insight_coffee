@@ -1,0 +1,98 @@
+.about {
+  padding: 7rem 7% 1.4rem;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span {
+  color: #fd8904;
+}
+
+/* Content 1 */
+.about .row1 {
+  display: flex;
+}
+
+.about .row1 .about-img1,
+.about .row2 .about-img2 {
+  flex: 1 1 30rem;
+}
+
+.about .row1 .about-img1 img,
+.about .row2 .about-img2 img {
+  width: 100%;
+}
+
+.about .row1 .content1  {
+  flex: 1 1 50rem;
+  margin-left: 20px;
+}
+
+.about .row1 .content1 h3,
+.about .row2 .content2 h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row1 .content1 p {
+  margin-bottom: 0.8rem;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Content 2 */
+.about .row2 {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 4rem;
+}
+
+.about .row2 .content2 {
+  flex: 1 1 50rem;
+  margin-right: 20px;
+}
+
+.about .row2 .content2 p {
+  margin-bottom: 0.8rem;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Media Query Tablet */
+@media screen and (max-width: 768px) {
+  .about .row1,
+  .about .row2 {
+    flex-wrap: wrap;
+  }
+
+  .about .row1 .about-img1 img,
+  .about .row2 .about-img2 img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row1 .content1,
+  .about .row2 .content2 {
+    padding: 0;
+  }
+
+  .about .row1 .content1 h3,
+  .about .row2 .content2 h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row1 .content1 p, 
+  .about .row2 .content2 p {
+    font-size: 1.6rem;
+  }
+}
