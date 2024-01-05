@@ -7,8 +7,8 @@ import cart1 from "../../assets/images/cart1.jpg";
 import cart2 from "../../assets/images/cart2.jpg";
 import cart3 from "../../assets/images/cart3.jpg";
 
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 
 function Contact() {
   return (
