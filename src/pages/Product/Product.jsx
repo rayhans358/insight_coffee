@@ -2,7 +2,7 @@ import React from 'react';
 
 import './productStyling.css';
 
-import Navbar from '../../components/Navbar/Navbar';
+import Navbar from '../../components/Header/Navbar';
 import Footer from '../../components/Footer/Footer';
 import ProductDetail from '../../components/Product/ProductDetail/ProductDetail';
 import ProductCard from '../../components/Product/ProductCard/ProductCard';
