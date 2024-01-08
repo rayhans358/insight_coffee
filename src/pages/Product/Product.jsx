@@ -1,9 +1,11 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar.jsx';
-import Footer from '../../components/Footer/Footer.jsx';
+
 import './productStyling.css';
-import ProductDetail from '../../components/Product/ProductDetail/ProductDetail.jsx';
-import ProductCard from '../../components/Product/ProductCard/ProductCard.jsx';
+
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import ProductDetail from '../../components/Product/ProductDetail/ProductDetail';
+import ProductCard from '../../components/Product/ProductCard/ProductCard';
 
 function Product() {
   return (

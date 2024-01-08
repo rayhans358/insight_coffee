@@ -119,7 +119,7 @@ function Navbar() {
                 event.stopPropagation();
                 clearAll();
               }}>Delete All</button>
-              <Link to="/orders" className='checkout-button' type='submit' id='checkout-button'>Checkout</Link>
+              <Link to="/carts" className='checkout-button' type='submit' id='checkout-button'>Checkout</Link>
             </div>
             </>
           )}

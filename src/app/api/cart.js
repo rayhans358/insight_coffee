@@ -29,7 +29,7 @@ export async function getCart() {
 
   // Fetching API with method GET with headers bearer token and get data
   const { data } = await axios
-    .get(`${config.api_host}/carts/`, {
+    .get(`${config.api_host}/carts`, {
       headers: {
         authorization: `Bearer ${token}`
       }

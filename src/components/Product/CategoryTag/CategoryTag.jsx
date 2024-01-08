@@ -56,31 +56,31 @@ function CategoryTag({ fetchProductsByCategory, fetchProductsByTag, setProducts 
   };
 
   return (
-    <>
-    {/* Category */}
-    <div className="category-list">
-      <h3>Category</h3>
-      {Array.isArray(categories) ? (
-        categories.map((category, index) => (
-          <p key={index} onClick={() => handleCategory(category.name)}>{category.name}</p>
-        ))
-      ) : (
-        <p>No categories found</p>
-      )}
+    <div>
+      {/* Category */}
+      <div className="category-list">
+        <h3>Category</h3>
+        {Array.isArray(categories) ? (
+          categories.map((category, index) => (
+            <p key={index} onClick={() => handleCategory(category.name)}>{category.name}</p>
+          ))
+        ) : (
+          <p>No categories found</p>
+        )}
+      </div>
+      
+      {/* Tag */}
+      <div className="tag-list">
+        <h3>Tags</h3>
+        {Array.isArray(label) ? (
+          label.map((tags, index) => (
+            <p key={index} onClick={() => handleTags(tags.name)}>{tags.name}</p>
+          ))
+        ) : (
+          <p>No tags found</p>
+        )}
+      </div>
     </div>
-    
-    {/* Tag */}
-    <div className="tag-list">
-      <h3>Tags</h3>
-      {Array.isArray(label) ? (
-        label.map((tags, index) => (
-          <p key={index} onClick={() => handleTags(tags.name)}>{tags.name}</p>
-        ))
-      ) : (
-        <p>No tags found</p>
-      )}
-    </div>
-    </>
   )
 };
 

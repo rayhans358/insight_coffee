@@ -1,8 +1,5 @@
-// import dotenv from config
-import { config } from "../../config";
-
-// Fetch API using axios
 import axios from "axios";
+import { config } from "../../config";
 
 export async function getProducts(params) {
   return await axios

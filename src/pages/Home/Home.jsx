@@ -5,8 +5,8 @@ import { AtSign, Phone, User } from 'react-feather';
 import './homeStyling.css';
 
 import coffee1 from '../../assets/images/coffee1.jpg';
-import Navbar from '../../components/Navbar/Navbar.jsx';
-import Footer from '../../components/Footer/Footer.jsx';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 
 function Home() {

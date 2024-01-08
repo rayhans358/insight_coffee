@@ -1,16 +1,11 @@
-// import dotenv from config
+import axios from "axios";
 import { config } from "../../config";
 
-// Fetch API using axios
-import axios from "axios";
-
 export async function getOrder(params) {
-  // Get token from local storage
   let { token } = localStorage.getItem("auth")
     ? JSON.parse(localStorage.getItem("auth"))
     : {};
   
-  // Fetching API with method GET with headers bearer token
   return await axios
     .get(`${config.api_host}/orders`, {
       params: {
@@ -24,12 +19,10 @@ export async function getOrder(params) {
 };
 
 export async function createOrder(payload) {
-  // Get token from local storage
   let { token } = localStorage.getItem("auth")
     ? JSON.parse(localStorage.getItem("auth"))
     : {};
   
-  // Fetching API with method POST with headers bearer token
   return await axios
     .post(`${config.api_host}/orders`, payload, {
       headers: {

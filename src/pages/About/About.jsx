@@ -2,10 +2,10 @@ import React from 'react';
 
 import './aboutStyling.css';
 
-import Navbar from '../../components/Navbar/Navbar.jsx';
-import Footer from '../../components/Footer/Footer.jsx';
 import coffee1 from '../../assets/images/coffee1.jpg';
 import coffee2 from '../../assets/images/coffee2.jpg';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 function About () {
   return (

@@ -17,7 +17,7 @@ export function useOrderData() {
   let [data, setData] = useState([]);
   let [status, setStatus] = useState(statusList.idle);
   let [page, setPage] = useState(1);
-  let [limit, setLimit] = useState(10);
+  let [limit, setLimit] = useState(9);
   let [count, setCount] = useState(0);
 
   // Fetch order API

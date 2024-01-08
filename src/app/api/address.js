@@ -1,16 +1,11 @@
-// Fetch API using axios
 import axios, { Axios } from "axios";
-
-// import dotenv from config
 import { config } from "../../config";
 
 export async function getAddress(params) {
-  // Get token from local storage
   let { token } = localStorage.getItem("auth")
     ? JSON.parse(localStorage.getItem("auth"))
     : {};
   
-  // Fetching API with method GET with params limit & skip and with headers bearer token
   return await Axios
     .get(`${config.api_host}/delivery-address`, {
     params: {
@@ -23,12 +18,10 @@ export async function getAddress(params) {
 };
 
 export async function createAddress(payload) {
-  // Get token from local storage 
   let { token } = localStorage.getItem("auth")
     ? JSON.parse(localStorage.getItem("auth"))
     : {};
   
-  // Fetching API with method POST with payload and with headers bearer token
   return await axios
     .post(`${config.api_host}/delivery-address`, payload, {
       headers: {
