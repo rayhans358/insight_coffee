@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Search, ShoppingCart, Menu, Users, Trash2 } from 'react-feather'; 
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import './navbarStyling.css';
@@ -11,10 +11,12 @@ import toggleDisplaySearchShop from '../../toggle/toggleDisplaySearchShop';
 import { addItem, clearAllItem, clearItem, reduceItem } from '../../app/features/actions/cartActions';
 import { formatRupiah, sumPrice } from '../../app/utils/currencyFormatter';
 import { setKeyword } from '../../app/features/actions/productActions';
+import Swal from 'sweetalert2';
 
 function Navbar() {
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart);
   const [searchTerm, setSearchTerm] = useState('');
   const multiply = String.fromCharCode(215); // (×)
@@ -42,7 +44,26 @@ function Navbar() {
   };
 
   function clearCart(item) {
-    dispatch(clearItem(item))
+    Swal.fire({
+      title: "Are you sure want to delete this product?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#109010",
+      cancelButtonColor: "#ff0000",
+      confirmButtonText: "Yes, delete it!"
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        dispatch(clearItem(item))
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your product has been deleted",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    });
   };
 
   function clearAll() {
@@ -89,11 +110,15 @@ function Navbar() {
         {/* Search Form end */}
 
         {/* Shopping Cart start */}
-        <div className="shopping-cart">
+        <div className="shopping-cart" style={{ overflowY: 'auto' }}>
           {cartItems.length === 0 ? (
             <h4 style={{marginTop: '1rem'}}>Cart is Empty</h4>
           ) : (
             <>
+            <div className="head-cart" style={{marginTop: '1rem'}}>
+              <h4 className='text-cart'>Keranjang</h4>
+              <h4 className='qty-cart'>{cartItems.reduce((total, item) => total + item.qty, 0)}</h4>
+            </div>
             {cartItems.map((item, index) => (
               <div key={index} className="cart-item">
                 <img src={`${config.api_host}/images/products/${item.image_url}`} alt={item.name} />
@@ -114,12 +139,14 @@ function Navbar() {
               </div>
             ))}
             <h4>Total : <span>{formatRupiah(sumPrice(cartItems))}</span></h4>
-            <div className="button ">
+            <div className="button">
               <button className='delete-button' onClick={(event) => {
                 event.stopPropagation();
                 clearAll();
               }}>Delete All</button>
-              <Link to="/carts" className='checkout-button' type='submit' id='checkout-button'>Checkout</Link>
+              <button className='checkout-button' onClick={() => {
+                navigate('/carts');
+              }}>Checkout</button>
             </div>
             </>
           )}

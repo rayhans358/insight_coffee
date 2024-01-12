@@ -1,0 +1,11 @@
+.cart {
+  padding: 7rem 7% 1.4rem;
+}
+
+.cart .page-cart {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+  position: relative;
+}

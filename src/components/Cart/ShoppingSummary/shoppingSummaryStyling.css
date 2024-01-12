@@ -1,0 +1,84 @@
+.box-shopping {
+  border-radius: 12px;
+  width: 384px;
+  min-width: 200px;
+  height: fit-content;
+  margin: 75px 0px 76px;
+  padding: 24px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 168px;
+  background: white;
+}
+
+.box-shopping .body-shopping {
+  width: 100%;
+  padding: 0px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.box-shopping .body-shopping h2 {
+  color: black;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.box-shopping .body-shopping .total-price {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.box-shopping .total-price span {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.28571;
+  color: black;
+}
+
+.box-shopping .delete,
+.box-shopping .checkout {
+  width: 100%;
+  padding: 0 24px;
+}
+
+.box-shopping .delete .delete-btn,
+.box-shopping .checkout .checkout-btn {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #b6895b;
+  background: #b6895b;
+  color: white;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  height: 40px;
+}
+
+.box-shopping .delete .delete-btn span,
+.box-shopping .checkout .checkout-btn span {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  gap: 4px;
+}
+
+.box-shopping .delete .delete-btn span:hover,
+.box-shopping .checkout .checkout-btn span:hover {
+  color: #c59e77c4;
+}
