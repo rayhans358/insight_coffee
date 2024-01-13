@@ -11,6 +11,14 @@ function CartAddress() {
       <Navbar/>
       <section id="cart-address" className="cart-address">
         <h2>Pengiriman</h2>
+        <div className="page-checkout">
+          {/* Detail Checkout */}
+          <div className="detail-checkout">
+            <div className="detail-address">
+              <h2>Alamat Pengiriman</h2>
+            </div>
+          </div>
+        </div>
       </section>
       <Footer/>
     </div>

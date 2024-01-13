@@ -60,7 +60,7 @@ function ShoppingSummary() {
           </button>
         </div>
         <div className="checkout">
-          <button className='checkout-btn' onClick={() => {navigate('/')}}>
+          <button className='checkout-btn' onClick={() => {navigate('/carts/delivery')}}>
             <span>Checkout</span>
           </button>
         </div>

@@ -10,3 +10,32 @@
   line-height: 1.33333;
 }
 
+.cart-address .page-checkout {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.page-checkout .detail-checkout {
+  display: block;
+  width: calc(100% - 384px);
+}
+
+.page-checkout .detail-checkout .detail-address {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: rgb(var(--NN0,255,255,255));
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.detail-checkout .detail-address h2 {
+  color: rgb(109, 117, 136);
+  font-size: 0.875rem;
+  line-height: 1.28571;
+  margin: 0px;
+  font-weight: 800
+}
