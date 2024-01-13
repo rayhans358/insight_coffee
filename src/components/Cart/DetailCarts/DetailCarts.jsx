@@ -50,7 +50,6 @@ function DetailCarts() {
   return (
     <div className="detail-carts">
       <h2>Keranjang</h2>
-      {/* Detail Carts */}
       {cartItems.length === 0 ? (
         <div className="empty">
           <img src={empty} alt="empty" />
