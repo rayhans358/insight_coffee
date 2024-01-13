@@ -1,17 +1,9 @@
-// import dotenv from config
+import axios from "axios";
 import { config } from "../../config";
-
-// import action setItems from cart
 import { setItems } from "../features/actions/cartActions";
-
-// import store
 import store from "../store";
 
-// Fetch API using axios
-import axios from "axios";
-
 export async function saveCart(token, cart) {
-  // Fetching API with method PUT with headers bearer token
   return await axios
     .put(`${config.api_host}/carts`, {items: cart}, {
       headers: {

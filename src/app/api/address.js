@@ -1,4 +1,4 @@
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { config } from "../../config";
 
 export async function getAddress(params) {
@@ -6,7 +6,7 @@ export async function getAddress(params) {
     ? JSON.parse(localStorage.getItem("auth"))
     : {};
   
-  return await Axios
+  return await axios
     .get(`${config.api_host}/delivery-address`, {
     params: {
       limit: params.limit,

@@ -70,6 +70,10 @@ function Navbar() {
     dispatch(clearAllItem())
   };
 
+  function handleCheckout() {
+    navigate('/carts')
+  }
+
   return (
     <div>
       <nav className="navbar">
@@ -145,7 +149,7 @@ function Navbar() {
                 clearAll();
               }}>Delete All</button>
               <button className='checkout-button' onClick={() => {
-                navigate('/carts');
+                handleCheckout()
               }}>Checkout</button>
             </div>
             </>

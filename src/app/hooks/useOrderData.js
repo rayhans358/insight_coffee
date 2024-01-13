@@ -1,10 +1,7 @@
-// import react
 import { useCallback, useEffect, useState } from "react";
 
-// import API order
 import { getOrder } from "../api/order";
 
-// List of fetching status
 const statusList = {
   idle: 'idle',
   process: 'process',
@@ -13,14 +10,12 @@ const statusList = {
 };
 
 export function useOrderData() {
-  // States
   let [data, setData] = useState([]);
   let [status, setStatus] = useState(statusList.idle);
   let [page, setPage] = useState(1);
   let [limit, setLimit] = useState(9);
   let [count, setCount] = useState(0);
 
-  // Fetch order API
   let fetchOrderData = useCallback(
     async function() {
       setStatus(statusList.process)

@@ -1,4 +1,3 @@
-// Import All counter Constants Type
 import * as constans from "../constans/counterConstans";
 
 let initialState = {

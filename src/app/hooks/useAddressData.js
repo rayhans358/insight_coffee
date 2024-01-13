@@ -1,10 +1,7 @@
-// import react
 import { useCallback, useEffect, useState } from "react";
 
-// import API address
 import { getAddress } from "../api/address";
 
-// List of fetching status
 const statusList = {
   idle: "idle",
   process: "process",
@@ -13,14 +10,12 @@ const statusList = {
 };
 
 export function useAddressData() {
-  // States
   let [data, setData] = useState([]);
   let [count, setCount] = useState(0);
   let [status, setStatus] = useState(statusList.idle);
   let [page, setPage] = useState(1);
   let [limit, setLimit] = useState(9);
 
-  // Fetch address API
   let fetchAddress = useCallback(
     async function() {
       setStatus(statusList.process)

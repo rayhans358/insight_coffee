@@ -1,7 +1,5 @@
-// Import All Cart Constants Type
 import * as constans from "../constans/cartConstans";
 
-// Actions are process from dispatch (if there's event handler triggered) to reducer
 export function addItem(item) {
   return {
     type: constans.ADD_ITEM,
