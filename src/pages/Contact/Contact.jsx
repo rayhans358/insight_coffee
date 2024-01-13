@@ -98,7 +98,7 @@ function Contact() {
       </section>
       <Footer/>
     </div>
-  )
+  );
 };
 
 export default Contact;

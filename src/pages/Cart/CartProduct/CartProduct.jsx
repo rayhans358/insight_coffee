@@ -19,7 +19,7 @@ function CartProduct() {
       </section>
       <Footer/>
     </div>
-  )
+  );
 };
 
 export default CartProduct;
