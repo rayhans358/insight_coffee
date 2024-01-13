@@ -44,13 +44,21 @@
 }
 
 .box-shopping .delete,
-.box-shopping .checkout {
+.box-shopping .checkout,
+.box-shopping .go-products {
   width: 100%;
   padding: 0 24px;
 }
 
+.box-shopping .delete span,
+.box-shopping .checkout span,
+.body-shopping .go-products span {
+  cursor: pointer;
+}
+
 .box-shopping .delete .delete-btn,
-.box-shopping .checkout .checkout-btn {
+.box-shopping .checkout .checkout-btn,
+.body-shopping .go-products .go-products-btn {
   display: block;
   width: 100%;
   font-weight: bold;
@@ -67,7 +75,8 @@
 }
 
 .box-shopping .delete .delete-btn span,
-.box-shopping .checkout .checkout-btn span {
+.box-shopping .checkout .checkout-btn span,
+.body-shopping .go-products .go-products-btn span {
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
@@ -79,6 +88,7 @@
 }
 
 .box-shopping .delete .delete-btn span:hover,
-.box-shopping .checkout .checkout-btn span:hover {
+.box-shopping .checkout .checkout-btn span:hover,
+.body-shopping .go-products .go-products-btn span:hover {
   color: #c59e77c4;
 }

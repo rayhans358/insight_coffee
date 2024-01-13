@@ -1,15 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import "./shoppingSummaryStyling.css";
 
 import { formatRupiah, sumPrice } from "../../../app/utils/currencyFormatter";
 import { clearAllItem } from "../../../app/features/actions/cartActions";
+import { useNavigate } from "react-router-dom";
 
 function ShoppingSummary() {
   const cartItems = useSelector((state) => state.cart);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function clearAll() {
@@ -54,21 +55,21 @@ function ShoppingSummary() {
       {cartItems.length > 0 ? (
         <>
         <div className="delete">
-          <button className="delete-btn" onClick={() => clearAll()} style={{cursor: "Pointer"}}>
+          <button className="delete-btn" onClick={() => clearAll()}>
             <span>Delete All</span>
           </button>
         </div>
         <div className="checkout">
-          <Link to="/" className='checkout-btn' type='submit' id='checkout-button'>
+          <button className='checkout-btn' onClick={() => {navigate('/')}}>
             <span>Checkout</span>
-          </Link>
+          </button>
         </div>
         </>
       ) : (
-        <div className="checkout">
-          <Link to="/products" className='checkout-btn' type='submit' id='checkout-button'>
+        <div className="go-products">
+          <button className='go-products-btn' onClick={() => {navigate('/products')}}>
             <span>Go Products</span>
-          </Link>
+          </button>
         </div>
       )}
     </div>
