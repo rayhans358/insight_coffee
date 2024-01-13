@@ -8,7 +8,6 @@ import About from './pages/About/About';
 import { listen } from './app/listener';
 import Contact from './pages/Contact/Contact';
 import CartProduct from './pages/Cart/CartProduct/CartProduct';
-import CartAddress from './pages/Cart/CartAddress/CartAddress';
 
 function App() {
   useEffect(() => {
@@ -24,7 +23,6 @@ function App() {
           <Route path='/about' exact element={<About/>}/>
           <Route path='/contact' exact element={<Contact/>}/>
           <Route path='/carts' exact element={<CartProduct/>}/>
-          <Route path='/carts/delivery' exact element={<CartAddress/>}/>
         </Routes>
       </BrowserRouter>
     </div>
