@@ -11,7 +11,7 @@ function CartProduct() {
   return (
     <div>
       <Navbar/>
-      <section id="cart" className="cart">
+      <section id="cart" className="cart-product">
         <div className="page-cart">
           <DetailCarts/>
           <ShoppingSummary/>

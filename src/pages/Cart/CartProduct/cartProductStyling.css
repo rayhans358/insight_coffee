@@ -1,8 +1,8 @@
-.cart {
+.cart-product {
   padding: 7rem 7% 1.4rem;
 }
 
-.cart .page-cart {
+.cart-product .page-cart {
   height: 100%;
   display: grid;
   grid-template-columns: auto auto;
