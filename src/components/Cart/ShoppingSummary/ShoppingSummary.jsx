@@ -42,13 +42,13 @@ function ShoppingSummary() {
         <h2>Ringkasan belanja</h2>
         {cartItems.length > 0 ? (
           <div className="total-price">
-            <span>Total</span>
-            <span>{formatRupiah(sumPrice(cartItems))}</span>
+            <span style={{fontWeight: "500"}}>Total</span>
+            <span style={{fontWeight: "bold"}}>{formatRupiah(sumPrice(cartItems))}</span>
           </div>
         ) : (
           <div className="total-price">
-            <span>Total</span>
-            <span>{formatRupiah(0)}</span>
+            <span style={{fontWeight: "500"}}>Total</span>
+            <span style={{fontWeight: "bold"}}>{formatRupiah(0)}</span>
           </div>
         )}
       </div>
