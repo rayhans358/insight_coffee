@@ -4,8 +4,8 @@ import "./cartProductStyling.css";
 
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
-import DetailCarts from "../../../components/Cart/DetailCarts/DetailCarts";
-import ShoppingSummary from "../../../components/Cart/ShoppingSummary/ShoppingSummary";
+import DetailCarts from "../../../components/Cart/CartProduct/DetailCarts/DetailCarts";
+import ShoppingSummary from "../../../components/Cart/CartProduct/ShoppingSummary/ShoppingSummary";
 
 function CartProduct() {
   return (

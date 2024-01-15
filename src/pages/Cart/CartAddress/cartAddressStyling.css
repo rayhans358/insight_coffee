@@ -87,7 +87,7 @@
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 .detail-checkout .detail-address .box-address .choice-address button {
@@ -262,7 +262,7 @@
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 .detail-checkout .detail-carts .box-carts .outer-box .box-item .gap-item .detail-items .choice-delivery button {
@@ -373,5 +373,8 @@
   white-space: nowrap;
   gap: 4px;
   cursor: pointer;
-  border: 1px solid lime;
+}
+
+.page-checkout .detail-shopping .box-detailShopping .box-btn .payment-btn span:hover {
+  color: #c59e77c4;
 }

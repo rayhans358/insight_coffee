@@ -107,7 +107,7 @@ function CartAddress() {
               </div>
               <div className="box-btn">
                 <button className="payment-btn">
-                  
+                  <span>Payment</span>
                 </button>
               </div>
             </div>

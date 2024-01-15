@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Clipboard, Trash2 } from "react-feather";
+import Swal from "sweetalert2";
 
 import "./detailCartsStyling.css";
-import empty from "../../../assets/images/empty.png";
+import empty from "../../../../assets/images/empty.png";
 
-import { config } from "../../../config";
-import { addItem, clearItem, reduceItem } from "../../../app/features/actions/cartActions";
-import { formatRupiah } from "../../../app/utils/currencyFormatter";
-import Swal from "sweetalert2";
+import { config } from "../../../../config";
+import { addItem, clearItem, reduceItem } from "../../../../app/features/actions/cartActions";
+import { formatRupiah } from "../../../../app/utils/currencyFormatter";
 
 function DetailCarts() {
   const dispatch = useDispatch();
