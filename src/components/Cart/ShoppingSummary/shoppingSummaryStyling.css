@@ -49,12 +49,6 @@
   padding: 0 24px;
 }
 
-.box-shopping .delete span,
-.box-shopping .checkout span,
-.body-shopping .go-products span {
-  cursor: pointer;
-}
-
 .box-shopping .delete .delete-btn,
 .box-shopping .checkout .checkout-btn,
 .body-shopping .go-products .go-products-btn {
@@ -66,8 +60,6 @@
   border: 1px solid #b6895b;
   background: #b6895b;
   color: white;
-  padding-left: 7px;
-  padding-right: 7px;
   font-size: 1.3rem;
   border-radius: 8px;
   height: 40px;
@@ -84,6 +76,7 @@
   height: 100%;
   white-space: nowrap;
   gap: 4px;
+  cursor: pointer;
 }
 
 .box-shopping .delete .delete-btn span:hover,

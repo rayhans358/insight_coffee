@@ -2,7 +2,9 @@
 const config = {
 	api_host: process.env.REACT_APP_API_HOST,
 	site_title: process.env.REACT_APP_SITE_TITLE,
-	global_ongkir: process.env.REACT_APP_GLOBAL_ONGKIR,
+	ongkir_goceng: process.env.REACT_APP_ONGKIR_GOCENG,
+	ongkir_mantap: process.env.REACT_APP_ONGKIR_MANTAP,
+	ongkir_shopoo: process.env.REACT_APP_ONGKIR_SHOPOO,
 	owner: process.env.REACT_APP_OWNER,
 	contact: process.env.REACT_APP_CONTACT,
 	billing: {
