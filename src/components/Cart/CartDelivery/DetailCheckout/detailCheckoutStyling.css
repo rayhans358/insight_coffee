@@ -1,30 +1,10 @@
-.cart-address {
-  padding: 7rem 7% 1.4rem;
-}
-
-.cart-address h2 {
-  text-align: justify;
-  font-size: 2.6rem;
-  margin-bottom: 3rem;
-  display: block;
-  line-height: 1.33333;
-}
-
-.cart-address .page-checkout {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-}
-
-/* Detail Checkout */
-/* Detail Address */
-.page-checkout .detail-checkout {
+.detail-checkout {
   display: block;
   width: calc(100% - 384px);
 }
 
-.page-checkout .detail-checkout .detail-address {
+/* Detail Address */
+.detail-checkout .detail-address {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -38,7 +18,7 @@
   color: white;
   font-size: 1.5rem;
   line-height: 1.28571;
-  margin: 0px;
+  margin: 0;
   font-weight: 800;
 }
 
@@ -138,6 +118,8 @@
   font-size: 1.5rem;
   line-height: 1.28571;
   margin: 0px 0px 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid white;
 }
 
 .detail-checkout .detail-carts .box-carts .outer-box {
@@ -242,7 +224,7 @@
 }
 
 .detail-checkout .detail-carts .box-carts .outer-box .box-item .gap-item .detail-items .note-item .cart-price .price span {
-  padding: 0px 1rem;
+  padding: 0px 0.65rem;
 }
 
 .detail-checkout .detail-carts .box-carts .outer-box .box-item .gap-item .detail-items .note-item .note {
@@ -256,125 +238,4 @@
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-}
-
-.detail-checkout .detail-carts .box-carts .outer-box .box-item .gap-item .detail-items .choice-delivery {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.detail-checkout .detail-carts .box-carts .outer-box .box-item .gap-item .detail-items .choice-delivery button {
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
-  position: relative;
-  color: white;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  height: 46px;
-  padding: 4px 16px;
-}
-
-.detail-checkout .detail-carts .box-carts .outer-box .box-item .gap-item .detail-items .choice-delivery span {
-  display: block;
-}
-
-/* Detail Shopping */
-.page-checkout .detail-shopping {
-  position: sticky;
-  width: 384px;
-  top: 92px;
-  flex-shrink: 0;
-}
-
-.page-checkout .detail-shopping .box-detailShopping {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px 0px;
-  background: white;
-  border-radius: 12px;
-}
-
-.page-checkout .detail-shopping .box-detailShopping h2 {
-  color: black;
-  font-size: 1.5rem;
-  line-height: 1.25;
-  font-weight: 800;
-  margin: 0px;
-  padding: 0px 24px;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .body-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-bottom: 15px;
-  border-bottom: 2px dashed #333;
-  margin: 0 24px;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .body-item .fill-itemPrice {
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .body-item .fill-itemPrice p {
-  font-size: 1.3rem;
-  line-height: 1.28571;
-  margin: 0px;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .total-price {
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-  padding: 0px 24px;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .total-price span {
-  font-size: 1.3rem;
-  line-height: 1.28571;
-  color: black;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .box-btn {
-  padding: 0 24px;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .box-btn .payment-btn {
-  display: block;
-  width: 100%;
-  font-weight: bold;
-  text-decoration: none;
-  position: relative;
-  border: 1px solid #b6895b;
-  background: #b6895b;
-  color: white;
-  font-size: 1.3rem;
-  border-radius: 8px;
-  height: 48px;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .box-btn .payment-btn span {
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  height: 100%;
-  white-space: nowrap;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.page-checkout .detail-shopping .box-detailShopping .box-btn .payment-btn span:hover {
-  color: #c59e77c4;
 }

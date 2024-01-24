@@ -1,0 +1,18 @@
+.cart-address {
+  padding: 7rem 7% 1.4rem;
+}
+
+.cart-address h2 {
+  text-align: justify;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  display: block;
+  line-height: 1.33333;
+}
+
+.cart-address .page-checkout {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}

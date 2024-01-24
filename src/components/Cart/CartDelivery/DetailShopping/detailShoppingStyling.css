@@ -1,0 +1,144 @@
+.courier-shopping {
+  position: sticky;
+  width: 384px;
+  top: 92px;
+  flex-shrink: 0;
+}
+
+/* Choice Courier */
+.courier-shopping .detail-courier .box-detailCourier {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-radius: 12px;
+}
+
+.courier-shopping .detail-courier .choice-delivery {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px 24px;
+  gap: 2rem;
+}
+
+.courier-shopping .detail-courier .text {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.28571;
+  margin: 0px;
+  padding: 0px 24px;
+}
+
+.courier-shopping .detail-courier .choice-delivery button {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  height: 46px;
+  padding: 3px 16px;
+}
+
+.courier-shopping .detail-courier .choice-delivery button .gap-text {
+  padding: 2px 0;
+}
+
+.courier-shopping .detail-courier .choice-delivery span {
+  display: block;
+}
+
+/* Detail Shopping */
+.courier-shopping .detail-shopping .box-detailShopping {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0px;
+  background: white;
+  border-radius: 12px;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping h2 {
+  color: black;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 800;
+  margin: 0px;
+  padding: 0px 24px;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .body-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #333;
+  margin: 0 24px;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .body-item .fill-itemPrice {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .body-item .fill-itemPrice p {
+  font-size: 1.3rem;
+  line-height: 1.28571;
+  margin: 0px;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .total-price {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 24px;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .total-price span {
+  font-size: 1.3rem;
+  line-height: 1.28571;
+  color: black;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .box-btn {
+  padding: 0 24px;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .box-btn .payment-btn {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #b6895b;
+  background: #b6895b;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  height: 48px;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .box-btn .payment-btn span {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.courier-shopping .detail-shopping .box-detailShopping .box-btn .payment-btn span:hover {
+  color: #c59e77c4;
+}

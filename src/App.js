@@ -8,7 +8,9 @@ import About from './pages/About/About';
 import { listen } from './app/listener';
 import Contact from './pages/Contact/Contact';
 import CartProduct from './pages/Cart/CartProduct/CartProduct';
-import CartAddress from './pages/Cart/CartAddress/CartAddress';
+import CartDelivery from './pages/Cart/CartDelivery/CartDelivery';
+import ChooseAddress from './components/Address/ChooseAddress/ChooseAddress';
+import NewAddress from './components/Address/NewAddress/NewAddress';
 
 function App() {
   useEffect(() => {
@@ -24,7 +26,9 @@ function App() {
           <Route path='/about' exact element={<About/>}/>
           <Route path='/contact' exact element={<Contact/>}/>
           <Route path='/carts' exact element={<CartProduct/>}/>
-          <Route path='/carts/delivery' exact element={<CartAddress/>}/>
+          <Route path='/carts/delivery' exact element={<CartDelivery/>}/>
+          <Route path='/choose-address' exact element={<ChooseAddress/>}/>
+          <Route path='/new-address' exact element={<NewAddress/>}/>
         </Routes>
       </BrowserRouter>
     </div>
