@@ -13,7 +13,6 @@ import bank7 from "../../../../assets/images/bank/bank7.png";
 import bank8 from "../../../../assets/images/bank/bank8.png";
 import bank9 from "../../../../assets/images/bank/bank9.png";
 import bank10 from "../../../../assets/images/bank/bank10.png";
-
 import another1 from "../../../../assets/images/bank/another1.png";
 import another2 from "../../../../assets/images/bank/another2.png";
 

@@ -82,7 +82,7 @@
     top: 0;
     opacity: 1;
   }
-} /* animasi untuk memunculkan dari atas ke bawah */
+}
 
 /* Modal Animation close */
 @keyframes animationCloseModal {

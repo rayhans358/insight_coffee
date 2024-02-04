@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Search, ShoppingCart, Menu, Users, Trash2 } from 'react-feather'; 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 
 import './navbarStyling.css';
 // import './navbarStyling.scss';
@@ -11,7 +12,6 @@ import toggleDisplaySearchShop from '../../toggle/toggleDisplaySearchShop';
 import { addItem, clearAllItem, clearItem, reduceItem } from '../../app/features/actions/cartActions';
 import { formatRupiah, sumPrice } from '../../app/utils/currencyFormatter';
 import { setKeyword } from '../../app/features/actions/productActions';
-import Swal from 'sweetalert2';
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -148,7 +148,7 @@ function Navbar() {
                 </div>
               </div>
             ))}
-            <h4>Total : <span>{formatRupiah(sumPrice(cartItems))}</span></h4>
+            <h4 className='text-total'>Total : <span>{formatRupiah(sumPrice(cartItems))}</span></h4>
             <div className="button">
               <button className='delete-button' onClick={(event) => {
                 event.stopPropagation();

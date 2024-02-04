@@ -1,8 +1,9 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import TotalShopping from "../../TotalShopping/TotalShopping";
 
 import "./resumeShoppingStyling.css";
+
+import TotalShopping from "../../TotalShopping/TotalShopping";
 
 function ResumeShopping() {
   const location = useLocation();
