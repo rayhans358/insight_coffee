@@ -1,0 +1,14 @@
+.detail-payment {
+  display: block;
+  width: calc(100% - 384px);
+}
+
+.detail-payment .detailed-address {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 2px solid white;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}

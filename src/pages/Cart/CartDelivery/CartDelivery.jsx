@@ -5,7 +5,7 @@ import "./cartDeliveryStyling.css";
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import DetailCheckout from "../../../components/Cart/CartDelivery/DetailCheckout/DetailCheckout";
-import DetailShopping from "../../../components/Cart/CartDelivery/DetailShopping/DetailShopping";
+import CourierShopping from "../../../components/Cart/CartDelivery/CourierShopping/CourierShopping";
 
 function CartDelivery() {
   return (
@@ -17,7 +17,7 @@ function CartDelivery() {
           {/* Detail Checkout */}
           <DetailCheckout/>
           {/* Detail Shopping */}
-          <DetailShopping/>
+          <CourierShopping/>
         </div>
       </section>
       <Footer/>

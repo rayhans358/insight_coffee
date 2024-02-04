@@ -1,0 +1,46 @@
+.name-street {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.name-street .name-phone {
+  display: flex;
+  gap: 30px;
+}
+
+.name-street .box-name,
+.name-street .box-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.name-street .box-name input,
+.name-street .box-phone input {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: Poppins, sans-serif;
+  height: 30px;
+  width: 19.2rem;
+  padding-left: 3px;
+}
+
+.name-street .box-street {
+  display: flex;
+  gap: 1.9rem;
+}
+
+.name-street .box-name label,
+.name-street .box-phone label,
+.name-street .box-street label {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.name-street .box-street textarea {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: Poppins, sans-serif;
+  padding-left: 3px;
+}

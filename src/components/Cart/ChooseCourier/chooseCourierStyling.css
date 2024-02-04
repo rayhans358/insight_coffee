@@ -1,0 +1,43 @@
+.choose-courier {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.choose-courier .choice-delivery {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px 24px;
+  gap: 2rem;
+}
+
+.choose-courier .text {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.28571;
+  margin: 0px;
+  padding: 0px 24px;
+}
+
+.choose-courier .choice-delivery button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  height: 46px;
+  gap: 5px;
+  padding: 3px 16px;
+}
+
+.choose-courier .choice-delivery span {
+  display: block;
+}

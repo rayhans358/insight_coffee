@@ -1,0 +1,53 @@
+.courier-shopping {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  width: 384px;
+  top: 92px;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* Detail Shopping */
+.courier-shopping .detail-shopping {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: white;
+  border-radius: 12px;
+  padding: 24px 0px;
+}
+
+.courier-shopping .detail-shopping .box-btn {
+  padding: 0 24px;
+}
+
+.courier-shopping .detail-shopping .box-btn .payment-btn {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #b6895b;
+  background: #b6895b;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  height: 48px;
+}
+
+.courier-shopping .detail-shopping .box-btn .payment-btn span {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.courier-shopping .detail-shopping .box-btn .payment-btn span:hover {
+  color: #c59e77c4;
+}

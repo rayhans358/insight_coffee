@@ -1,0 +1,18 @@
+.cart-payments {
+  padding: 7rem 7% 1.4rem;
+}
+
+.cart-payments .text-payments {
+  text-align: justify;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  display: block;
+  line-height: 1.33333;
+}
+
+.cart-payments .page-payments {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}

@@ -1,0 +1,38 @@
+.box-region .select-region {
+  display: flex;
+  gap: 6rem;
+  padding: 0 20px;
+}
+
+.box-region .select-region label {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.box-region .select-region .province-district,
+.box-region .select-region .regency-village {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.box-region .select-region select {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.box-region .select-region option {
+  font-size: 1rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+}
+
+.box-region .select-region .province,
+.box-region .select-region .regency,
+.box-region .select-region .district,
+.box-region .select-region .village {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}

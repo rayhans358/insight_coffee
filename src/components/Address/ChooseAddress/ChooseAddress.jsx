@@ -46,8 +46,8 @@ function ChooseAddress() {
             </div>
             <div className="submit-button">
               <input className="submit" type="submit" value="Pilih Alamat" onClick={handleSelectAddress} />
-              <input className="submit" type="submit" value="Tambah Alamat Baru" onClick={() => {
-              navigate('/new-address')}} />
+              <input className="submit" type="submit" value="Edit Alamat" onClick={() => {navigate('/edit-address')}} />
+              <input className="submit" type="submit" value="Tambah Alamat Baru" onClick={() => {navigate('/new-address')}} />
             </div>
           </div>
         </div>

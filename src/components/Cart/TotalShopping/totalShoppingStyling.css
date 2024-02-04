@@ -1,0 +1,50 @@
+.total-shopping {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.total-shopping h2 {
+  color: black;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 800;
+  margin: 0px;
+  padding: 0px 24px;
+}
+
+.total-shopping .body-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #333;
+  margin: 0 24px;
+}
+
+.total-shopping .body-item .fill-itemPrice {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.total-shopping .body-item .fill-itemPrice p {
+  font-size: 1.3rem;
+  line-height: 1.28571;
+  margin: 0px;
+}
+
+.total-shopping .total-price {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 24px;
+}
+
+.total-shopping .total-price span {
+  font-size: 1.3rem;
+  line-height: 1.28571;
+  color: black;
+}

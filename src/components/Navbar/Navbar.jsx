@@ -19,7 +19,6 @@ function Navbar() {
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart);
   const [searchTerm, setSearchTerm] = useState('');
-  const multiply = String.fromCharCode(215); // (×)
   const plus = String.fromCharCode(43); // (+)
   const minus = String.fromCharCode(8722); // (−)
   const equal = String.fromCharCode(61); // (=)
@@ -119,8 +118,8 @@ function Navbar() {
             <h4 style={{marginTop: '1rem'}}>Cart is Empty</h4>
           ) : (
             <>
-            <div className="head-cart" style={{marginTop: '1rem'}}>
-              <h4 className='text-cart'>Keranjang</h4>
+            <div className="head-cart">
+              <h4>Keranjang</h4>
               <h4 className='qty-cart'>{cartItems.reduce((total, item) => total + item.qty, 0)}</h4>
             </div>
             {cartItems.map((item, index) => (
@@ -133,11 +132,18 @@ function Navbar() {
                   }}/>
                   <h3>{item.name}</h3>
                   <div className="item-price">
-                    <span>{formatRupiah(item.price)} {multiply} </span>
-                    <button id="minus" onClick={() => reduceCart(item)}>{minus}</button>
-                    <span>{item.qty}</span>
-                    <button id="plus" onClick={() => addCart(item)}>{plus}</button>{equal}
-                    <span>{formatRupiah(item.price * item.qty)}</span>
+                    <div className="item-qty">
+                      <span style={{padding: '0 10px'}}>{formatRupiah(item.price)}</span>
+                      <div className="qty">
+                        <button id="minus" onClick={() => reduceCart(item)}>{minus}</button>
+                        <span> {item.qty} </span>
+                        <button id="plus" onClick={() => addCart(item)}>{plus}</button>
+                      </div>
+                    </div>
+                    <div className="total-price">
+                      {equal}
+                      <span style={{fontWeight: '600'}}> {formatRupiah(item.price * item.qty)}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -146,7 +152,7 @@ function Navbar() {
             <div className="button">
               <button className='delete-button' onClick={(event) => {
                 event.stopPropagation();
-                clearAll();
+                  clearAll();
               }}>Delete All</button>
               <button className='checkout-button' onClick={() => {
                 handleCheckout()

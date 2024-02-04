@@ -22,80 +22,8 @@
 .page-newAddress .box-newAddress {
   padding: 24px;
   justify-content: center;
-  gap: 3rem;
+  gap: 5rem;
   display: flex;
-}
-
-.box-newAddress .name-street {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.page-newAddress .box-newAddress .name-street .box-name {
-  display: flex;
-  gap: 2.4rem;
-}
-
-.page-newAddress .box-newAddress .name-street .box-name input {
-  font-size: 1.3rem;
-  font-weight: 500;
-  font-family: Poppins, sans-serif;
-  height: 30px;
-  width: 19.2rem;
-  padding-left: 3px;
-}
-
-.page-newAddress .box-newAddress .name-street .box-street {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.page-newAddress .box-region .select-region {
-  display: flex;
-  gap: 6rem;
-  padding: 0 20px;
-}
-
-.page-newAddress .box-newAddress .name-street .box-name label,
-.page-newAddress .box-newAddress .name-street .box-street label,
-.page-newAddress .box-newAddress .select-region label {
-  font-size: 1.3rem;
-  font-weight: 800;
-}
-
-.page-newAddress .box-newAddress .box-street textarea {
-  font-size: 1.3rem;
-  font-weight: 500;
-  font-family: Poppins, sans-serif;
-  padding-left: 3px;
-}
-
-.box-region .select-region .province-district,
-.box-region .select-region .regency-village {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.page-newAddress .box-newAddress .select-region select {
-  cursor: pointer;
-  padding: 10px;
-}
-
-.page-newAddress .box-newAddress .select-region option {
-  font-size: 1rem;
-  font-family: Poppins, sans-serif;
-  font-weight: 500;
-}
-
-.page-newAddress .box-region .select-region .province,
-.page-newAddress .box-region .select-region .regency,
-.page-newAddress .box-region .select-region .district,
-.page-newAddress .box-region .select-region .village {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
 }
 
 .page-newAddress .submit-button {
