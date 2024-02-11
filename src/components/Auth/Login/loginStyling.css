@@ -1,0 +1,92 @@
+.login {
+  position: flex;
+  margin: auto;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  height: 100%;
+}
+
+.login h1 {
+  color: black;
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.login .social-icons {
+  margin: 10px 0;
+}
+
+.login .social-icons .icon {
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 6px;
+  width: 40px;
+  height: 40px;
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.login span {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.login h4 {
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0;
+}
+
+.login .is-login {
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0;
+  /* text-decoration: underline; */
+  cursor: pointer;
+}
+
+.login button {
+  background-color: #512da8;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.login form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.login input{
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 50px;
+  width: 100%;
+  outline: none;
+}

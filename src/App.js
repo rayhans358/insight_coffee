@@ -12,6 +12,7 @@ import CartDelivery from './pages/Cart/CartDelivery/CartDelivery';
 import ChooseAddress from './components/Address/ChooseAddress/ChooseAddress';
 import NewAddress from './components/Address/NewAddress/NewAddress';
 import CartPayment from './pages/Cart/CartPayment/CartPayment';
+import Auth from './pages/Account/Auth/Auth';
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/choose-address' exact element={<ChooseAddress/>}/>
           <Route path='/new-address' exact element={<NewAddress/>}/>
           <Route path='/carts/payment' exact element={<CartPayment/>}/>
+          <Route path='/account/login-register' exact element={<Auth/>}/>
         </Routes>
       </BrowserRouter>
     </div>
