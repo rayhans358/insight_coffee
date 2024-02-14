@@ -2,7 +2,6 @@
   position: flex;
   margin: auto;
   height: 100%;
-  
 }
 
 .register h1 {
@@ -44,7 +43,6 @@
   font-weight: 500;
   text-decoration: none;
   margin: 0;
-  /* text-decoration: underline; */
   cursor: pointer;
 }
 
@@ -85,7 +83,7 @@
   margin: 8px 0;
   padding: 10px 15px;
   font-size: 13px;
-  border-radius: 50px;
+  border-radius: 10px;
   width: 100%;
   outline: none;
 }
