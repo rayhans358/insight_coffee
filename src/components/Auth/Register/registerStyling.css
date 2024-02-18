@@ -1,18 +1,19 @@
 .register {
   position: flex;
-  margin: auto;
-  height: 100%;
+  margin: 25px auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .register h1 {
-  color: #333;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
   font-size: 2.6rem;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-}
-
-.register .social-icons {
-  margin: 10px 0;
 }
 
 .register .social-icons .icon {
@@ -29,16 +30,102 @@
   text-decoration: none;
 }
 
+.register form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.register label {
+  width: 100%;
+  color: black;
+  font-size: 15px;
+}
+
+.instructions {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background: black;
+  color: white;
+  padding: 0.25rem;
+  width: 100%;
+  position: relative;
+  bottom: -10px;
+}
+
+.instructions > svg {
+  margin-right: 0.25rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  width: 100%;
+}
+
 .register h4 {
-  color: #333;
+  color: black;
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
   margin: 0;
 }
 
+.register span {
+  color: black;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.register input{
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 10px;
+  width: 100%;
+  outline: none;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  font-size: 13px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
 .register .is-login {
-  color: #333;
+  color: black;
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
@@ -46,11 +133,10 @@
   cursor: pointer;
 }
 
-.register span {
-  color: #333;
-  font-size: 13px;
-  text-decoration: none;
-  margin: 10px 0;
+.register .is-login:hover{
+  color: #512da8;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .register button {
@@ -65,25 +151,4 @@
   text-transform: uppercase;
   margin-top: 10px;
   cursor: pointer;
-}
-
-.register form {
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 40px;
-  height: 100%;
-}
-
-.register input{
-  background-color: #eee;
-  border: none;
-  margin: 8px 0;
-  padding: 10px 15px;
-  font-size: 13px;
-  border-radius: 10px;
-  width: 100%;
-  outline: none;
 }

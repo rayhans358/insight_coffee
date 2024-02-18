@@ -1,10 +1,15 @@
 .login {
   position: flex;
-  margin: auto;
-  height: 100%;
+  margin: 25px auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .login h1 {
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: black;
   font-size: 2.6rem;
   font-weight: 700;
@@ -29,28 +34,55 @@
   text-decoration: none;
 }
 
+.login form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.login h4 {
+  color: black;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0;
+}
+
 .login span {
-  color: #333;
+  color: black;
   font-size: 13px;
   text-decoration: none;
   margin: 10px 0;
 }
 
-.login h4 {
-  color: #333;
+.login input{
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
   font-size: 13px;
-  font-weight: 500;
-  text-decoration: none;
-  margin: 0;
+  border-radius: 10px;
+  width: 100%;
+  outline: none;
 }
 
 .login .is-login {
-  color: #333;
+  color: black;
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
   margin: 0;
   cursor: pointer;
+}
+
+.login .is-login:hover {
+  color: #512da8;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .login button {
@@ -65,25 +97,4 @@
   text-transform: uppercase;
   margin-top: 10px;
   cursor: pointer;
-}
-
-.login form {
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 40px;
-  height: 100%;
-}
-
-.login input{
-  background-color: #eee;
-  border: none;
-  margin: 8px 0;
-  padding: 10px 15px;
-  font-size: 13px;
-  border-radius: 10px;
-  width: 100%;
-  outline: none;
 }
