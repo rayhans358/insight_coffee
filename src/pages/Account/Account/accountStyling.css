@@ -1,0 +1,20 @@
+.account-container {
+  padding: 8rem 5% 1rem;
+  height: 1000vh;
+}
+
+.account-container h2 {
+  text-align: justify;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  display: block;
+  line-height: 1.33333;
+}
+
+.account-container .page-choose {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  gap: 24px;
+}

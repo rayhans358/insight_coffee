@@ -1,0 +1,51 @@
+.orderList-container {
+  padding: 10px;
+}
+
+.orderList-container .text-orderList {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 5px 0 30px;
+}
+
+.orderList-container .table-orderList {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.orderList-container .table-orderList .orderId th {
+  padding: 8px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 20%;
+}
+
+.orderList-container .table-orderList .orderId td {
+  padding: 8px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 20%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.orderList-container .table-orderList .detail-orderList th {
+  padding: 8px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 25%;
+  border: 1px solid white;
+}
+
+.orderList-container .table-orderList .detail-orderList td {
+  padding: 8px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 29%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}

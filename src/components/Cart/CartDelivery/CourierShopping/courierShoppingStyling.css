@@ -2,8 +2,6 @@
   position: sticky;
   display: flex;
   flex-direction: column;
-  width: 384px;
-  top: 92px;
   gap: 20px;
   flex-shrink: 0;
 }

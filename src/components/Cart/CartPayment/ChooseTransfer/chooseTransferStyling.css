@@ -57,7 +57,14 @@
 
 .choose-transfer .choose-bank .bank .check,
 .choose-transfer .another-transfer .another .check {
-  color: black;
+  border: 1px solid lime;
+  border-radius: 50%;
+  background-color: rgb(61, 136, 179);
+  padding: 5px;
+  size: 40px;
+  height: 30px;
+  width: 30px;
+  color: white;
   display: none;
   margin: auto 2rem auto auto;
 }

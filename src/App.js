@@ -12,7 +12,9 @@ import CartDelivery from './pages/Cart/CartDelivery/CartDelivery';
 import ChooseAddress from './components/Address/ChooseAddress/ChooseAddress';
 import NewAddress from './components/Address/NewAddress/NewAddress';
 import CartPayment from './pages/Cart/CartPayment/CartPayment';
-import Auth from './pages/Account/Auth/Auth';
+import PageLogin from './pages/Account/Auth/Login/PageLogin';
+import PageRegister from './pages/Account/Auth/Register/PageRegister';
+import Account from './pages/Account/Account/Account';
 
 function App() {
   useEffect(() => {
@@ -32,7 +34,12 @@ function App() {
           <Route path='/choose-address' exact element={<ChooseAddress/>}/>
           <Route path='/new-address' exact element={<NewAddress/>}/>
           <Route path='/carts/payment' exact element={<CartPayment/>}/>
-          <Route path='/account/login-register' exact element={<Auth/>}/>
+          <Route path='/account/login' exact element={<PageLogin/>}/>
+          <Route path='/account/register' exact element={<PageRegister/>}/>
+          <Route path='/account/dashboard' exact element={<Account/>}/>
+          {/* <Route path='/account/order-list' exact element={<PageRegister/>}/> */}
+          {/* <Route path='/account/address' exact element={<PageRegister/>}/> */}
+          {/* <Route path='/account/logout' exact element={<PageRegister/>}/> */}
         </Routes>
       </BrowserRouter>
     </div>

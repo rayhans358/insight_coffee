@@ -20,10 +20,6 @@ function Auth() {
       <Navbar/>
       <section className="auth-container" id="auth-container">
         {isLogin ? <Login onToggleLogin={handleToggleLogin} /> : <Register onToggleLogin={handleToggleLogin} />}
-        {/* Sign In */}
-        {/* <Login/> */}
-        {/* Sign Up */}
-        {/* <Register/> */}
       </section>
       <Footer/>
     </div>

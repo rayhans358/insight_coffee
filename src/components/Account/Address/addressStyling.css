@@ -1,0 +1,55 @@
+.address-container {
+  padding: 10px;
+}
+
+.address-container .text-address {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 5px 0 10px;
+}
+
+.address-container .address-account {
+  display: flex;
+  margin: 0 0 10px;
+  border: 1px solid white;
+  border-radius: 12px;
+  background: white;
+  color: black;
+  width: fit-content;
+  padding: 7px;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.address-container .address-account h3 {
+  font-size: 1.2rem;
+}
+
+.address-container .address-account .iconPlus {
+  width: 15px;
+  height: 15px;
+  font-weight: 800;
+  margin: auto 0;
+}
+
+.address-container .table-address {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.address-container .table-address th {
+  padding: 8px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.address-container .table-address td {
+  padding: 8px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 50%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}

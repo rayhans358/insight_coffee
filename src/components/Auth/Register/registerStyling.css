@@ -116,15 +116,12 @@
   outline: none;
 }
 
-input[type="text"],
-input[type="password"],
-textarea {
-  font-size: 13px;
-  padding: 10px 15px;
-  border-radius: 10px;
+.register .text-register {
+  display: flex;
+  gap: 10px;
 }
 
-.register .is-login {
+.register .text-register .is-register {
   color: black;
   font-size: 13px;
   font-weight: 500;
@@ -133,7 +130,7 @@ textarea {
   cursor: pointer;
 }
 
-.register .is-login:hover{
+.register .text-register .is-register:hover{
   color: #512da8;
   font-weight: bold;
   text-decoration: underline;

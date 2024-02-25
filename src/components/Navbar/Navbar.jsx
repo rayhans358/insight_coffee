@@ -99,7 +99,7 @@ function Navbar() {
               </span>
             )}
           </Link>
-          <Link to="/account/login-register" id=""><Users /></Link>
+          <Link to="/account/login" id=""><Users /></Link>
           <Link to="/" id="display-menu"><Menu /></Link>
         </div>
         {/* Navbar Extra end */}
