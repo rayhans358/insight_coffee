@@ -32,7 +32,12 @@ function Login() {
       const response = await loginUser({ email, password });
       console.log(response?.data, "31");
       //console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
+      const accessToken = response?.data?.token;
+      console.log(accessToken, "36");
+      localStorage.setItem("auth", JSON.stringify({
+        user: response.data.user,
+        token: accessToken
+      }))
       setAuth({ 
         email,
         password,
@@ -40,6 +45,7 @@ function Login() {
       });
       setEmail('');
       setPassword('');
+      navigate("/account/dashboard");
 
     } catch (err) {
       if (!err?.response) {

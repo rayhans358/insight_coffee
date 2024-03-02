@@ -10,11 +10,10 @@ import { createAddress } from "../../../app/api/address";
 import FormAddress from "../FormAddress/FormAddress";
 import SelectRegion from "../SelectRegion/SelectRegion";
 
-
 function NewAddress() {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState("");
-  const [fullPhone, setFullPhone] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [fullStreet, setFullStreet] = useState("");
   const [selectedProvince, setSelectedProvince] = useState("");
   const [selectedRegency, setSelectedRegency] = useState("");
@@ -22,10 +21,10 @@ function NewAddress() {
   const [selectedVillage, setSelectedVillage] = useState("");
 
   function handleClickSubmit() {
-    if (!fullName || !fullPhone || !fullStreet) {
+    if (!fullName || !phoneNumber || !fullStreet) {
       Swal.fire({
         icon: "warning",
-        title: "Harap isi nama lengkap, nomor handphone dan jalan terlebih dahulu",
+        title: "Harap isi nama lengkap, nomor handphone serta jalan terlebih dahulu",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -43,21 +42,21 @@ function NewAddress() {
     };
 
     const payload = {
-      nama: fullName,
-      handphone: fullPhone,
-      alamat: fullStreet,
+      fullName: fullName,
+      phoneNumber: phoneNumber,
+      fullStreet: fullStreet,
       provinsi: selectedProvince,
       kabupaten: selectedRegency,
       kecamatan: selectedDistrict,
-      desa: selectedVillage
+      kelurahan: selectedVillage
     };
 
     createAddress(payload)
       .then((response) => {
-        if (!payload) {
+        if (payload) {
           Swal.fire({
-            icon: "error",
-            title: "Terjadi kesalahan saat menambahkan alamat",
+            icon: "success",
+            title: "Anda berhasil menambahkan alamat",
             showConfirmButton: false,
             timer: 2000,
           });
@@ -86,8 +85,8 @@ function NewAddress() {
             <FormAddress
               fullName={fullName}
               setFullName={setFullName}
-              fullPhone={fullPhone}
-              setFullPhone={setFullPhone}
+              phoneNumber={phoneNumber}
+              setPhoneNumber={setPhoneNumber}
               fullStreet={fullStreet}
               setFullStreet={setFullStreet}
             />

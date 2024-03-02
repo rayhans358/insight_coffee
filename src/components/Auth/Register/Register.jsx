@@ -12,12 +12,14 @@ import { useNavigate } from 'react-router-dom';
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,255}$/;
 const EMAIL_REGEX = /^([\w-.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+const PHONE_NUMBER_REGEX = /^[0-9]{9,15}$/;
 const PWD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9]).{3,30}$/;
 
 function Register() {
   const navigate = useNavigate();
   const userRef = useRef(null);
   const emailRef = useRef(null);
+  const phoneRef = useRef(null);
   const errRef = useRef(null);
 
   const [fullName, setFullName] = useState('');
@@ -31,6 +33,10 @@ function Register() {
   const [password, setPassword] = useState('');
   const [validPassword, setValidPassword] = useState(false);
   const [passwordFocus, setPasswordFocus] = useState(false);
+
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [validPhoneNumber, setValidPhoneNumber] = useState(false);
+  const [phoneNumberFocus, setPhoneNumberFocus] = useState(false);
 
   const [matchPassword, setMatchPassword] = useState('');
   const [validMatch, setValidMatch] = useState(false);
@@ -51,6 +57,10 @@ function Register() {
   }, [email]);
 
   useEffect(() => {
+    setValidPhoneNumber(PHONE_NUMBER_REGEX.test(phoneNumber));
+  }, [phoneNumber]);
+
+  useEffect(() => {
     setValidPassword(PWD_REGEX.test(password));
     setValidMatch(password === matchPassword);
   }, [password, matchPassword]);
@@ -60,14 +70,15 @@ function Register() {
 
     const v1 = USER_REGEX.test(fullName);
     const v2 = PWD_REGEX.test(password);
-    const v3 = EMAIL_REGEX.test(email);
-    if (!v1 || !v2 || !v3) {
+    const v3 = PHONE_NUMBER_REGEX.test(phoneNumber);
+    const v4 = EMAIL_REGEX.test(email);
+    if (!v1 || !v2 || !v3 || !v4) {
       setErrMsg("Invalid Entry");
       return;
     };
 
     try {
-      const response = await registerUser({ fullName, email, password });
+      const response = await registerUser({ fullName, email, phoneNumber, password });
       console.log(response?.data, "68");
       // console.log(JSON.stringify(response));
       Swal.fire({
@@ -87,6 +98,7 @@ function Register() {
       setFullName('');
       setEmail('');
       setPassword('');
+      setPhoneNumber('');
       setMatchPassword('');
 
     } catch (err) {
@@ -171,6 +183,30 @@ function Register() {
         <p id="emailnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"}>
           <FontAwesomeIcon icon={faInfoCircle} />
           Please fill in your email address correctly.
+        </p>
+
+        <label htmlFor="phone">
+          Phone Number :
+          <FontAwesomeIcon icon={faCheck} className={validPhoneNumber ? "valid" : "hide"} />
+          <FontAwesomeIcon icon={faTimes} className={validPhoneNumber || !phoneNumber ? "hide" : "invalid"} />
+        </label>
+        <input 
+          type="text"
+          placeholder="Phone Number" 
+          id="phone"
+          ref={phoneRef}
+          autoComplete="off"
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          value={phoneNumber}
+          required
+          aria-invalid={validPhoneNumber ? "false" : "true"}
+          aria-describedby="phonenote"
+          onFocus={() => setPhoneNumberFocus(true)}
+          onBlur={() => setPhoneNumberFocus(false)}
+        />
+        <p id="phonenote" className={phoneNumberFocus && phoneNumber && !validPhoneNumber ? "instructions" : "offscreen"}>
+          <FontAwesomeIcon icon={faInfoCircle} />
+          Must be 9 to 15 digits.
         </p>
 
         <label htmlFor="password">

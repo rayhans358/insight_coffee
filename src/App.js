@@ -31,15 +31,14 @@ function App() {
           <Route path='/contact' exact element={<Contact/>}/>
           <Route path='/carts' exact element={<CartProduct/>}/>
           <Route path='/carts/delivery' exact element={<CartDelivery/>}/>
-          <Route path='/choose-address' exact element={<ChooseAddress/>}/>
-          <Route path='/new-address' exact element={<NewAddress/>}/>
+          <Route path='/carts/choose-address' exact element={<ChooseAddress/>}/>
+          <Route path='/carts/new-address' exact element={<NewAddress/>}/>
           <Route path='/carts/payment' exact element={<CartPayment/>}/>
           <Route path='/account/login' exact element={<PageLogin/>}/>
           <Route path='/account/register' exact element={<PageRegister/>}/>
-          <Route path='/account/dashboard' exact element={<Account/>}/>
-          {/* <Route path='/account/order-list' exact element={<PageRegister/>}/> */}
-          {/* <Route path='/account/address' exact element={<PageRegister/>}/> */}
-          {/* <Route path='/account/logout' exact element={<PageRegister/>}/> */}
+          <Route path='/account/dashboard' exact element={<Account />}/>
+          <Route path='/account/order-list' exact element={<Account />}/>
+          <Route path='/account/address' exact element={<Account />}/>
         </Routes>
       </BrowserRouter>
     </div>

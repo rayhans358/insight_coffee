@@ -2,16 +2,19 @@ import React from 'react';
 
 import "./pageContentStyling.css";
 
-// import Dashboard from '../Dashboard/Dashboard';
+import Dashboard from '../Dashboard/Dashboard';
 import OrderList from '../OrderList/OrderList';
-// import Address from '../Address/Address';
+import Address from '../Address/Address';
 
-function PageContent() {
+function PageContent({ selectedPage }) {
   return (
     <section id="pagecontent-container" className="pagecontent-container">
-      {/* <Dashboard/> */}
-      <OrderList/>
-      {/* <Address/> */}
+      {/* <Dashboard />
+      <OrderList />
+      <Address /> */}
+      {selectedPage === 'dashboard' && <Dashboard/>}
+      {selectedPage === 'order-list' && <OrderList/>}
+      {selectedPage === 'address' && <Address/>}
     </section>
   );
 };

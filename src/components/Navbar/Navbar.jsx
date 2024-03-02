@@ -18,6 +18,7 @@ function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const plus = String.fromCharCode(43); // (+)
   const minus = String.fromCharCode(8722); // (−)
@@ -25,13 +26,16 @@ function Navbar() {
 
   useEffect(() => {
     toggleDisplaySearchShop();
-  }, []);
+    const auth = localStorage.getItem("auth") 
+    ? JSON.parse(localStorage.getItem("auth"))
+    : {};
+    setIsLoggedIn(!!auth.token)
+  }, [navigate]);
 
   async function handleSearch(event) {
     const searchTerm = event.target.value
     setSearchTerm(searchTerm);
     dispatch(setKeyword(searchTerm));
-    // console.log(searchTerm, 'trim navbar');
   };
 
   function addCart(item) {
@@ -73,6 +77,14 @@ function Navbar() {
     navigate('/carts')
   }
 
+  function handleUserLogin() {
+    if (isLoggedIn) {
+      navigate("/account/dashboard");
+    } else {
+      navigate("/account/login");
+    }
+  }
+
   return (
     <div>
       <nav className="navbar">
@@ -99,7 +111,7 @@ function Navbar() {
               </span>
             )}
           </Link>
-          <Link to="/account/login" id=""><Users /></Link>
+          <Link to={isLoggedIn ? "/account/dashboard" : "/account/login"} id="user-button" onClick={handleUserLogin}><Users /></Link>
           <Link to="/" id="display-menu"><Menu /></Link>
         </div>
         {/* Navbar Extra end */}

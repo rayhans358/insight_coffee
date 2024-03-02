@@ -85,3 +85,9 @@
   cursor: pointer;
   border: 2px solid white;
 }
+
+.choose-address .page-chooseAddress .box-address .submit-button .submit:hover {
+  background: #b6895b;
+  border: 2px solid #b6895b;
+  color: white;
+}

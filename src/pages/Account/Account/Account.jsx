@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import "./accountStyling.css";
 import Navbar from '../../../components/Navbar/Navbar';
@@ -7,14 +7,15 @@ import ChooseContent from '../../../components/Account/ChooseContent/ChooseConte
 import PageContent from '../../../components/Account/PageContent/PageContent';
 
 function Account() {
+  const [selectedPage, setSelectedPage] = useState('dashboard');
   return (
     <div>
       <Navbar/>
       <section id="account-container" className="account-container">
         <h2>Account</h2>
         <div className="page-choose">
-          <ChooseContent/>
-          <PageContent/>
+          <ChooseContent setSelectedPage={setSelectedPage} />
+          <PageContent selectedPage={selectedPage}/>
         </div>
       </section>
       <Footer/>

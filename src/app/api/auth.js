@@ -25,5 +25,5 @@ export async function logoutUser() {
     .then((res) => {
       localStorage.removeItem('auth');
       return res
-    })
+    });
 };

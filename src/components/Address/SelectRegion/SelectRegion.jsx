@@ -4,11 +4,12 @@ import "./selectRegionStyling.css";
 
 import { getDistricts, getProvince, getRegency, getVillages } from "../../../app/api/region";
 
-function SelectRegion() {
-  const [selectedProvince, setSelectedProvince] = useState("");
-  const [selectedRegency, setSelectedRegency] = useState("");
-  const [selectedDistrict, setSelectedDistrict] = useState("");
-  const [selectedVillage, setSelectedVillage] = useState("");
+function SelectRegion({
+  selectedProvince, setSelectedProvince, 
+  selectedRegency, setSelectedRegency, 
+  selectedDistrict, setSelectedDistrict, 
+  selectedVillage, setSelectedVillage 
+  }) {
   const [provinces, setProvinces] = useState([]);
   const [regences, setRegences] = useState([]);
   const [districts, setDistricts] = useState([]);
@@ -59,7 +60,7 @@ function SelectRegion() {
   };
 
   useEffect(() => {
-      fetchProvince();
+    fetchProvince();
   }, []);
 
   function handleProvinceChange(event) {

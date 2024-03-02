@@ -3,7 +3,7 @@ import { MapPin, User } from "react-feather";
 
 import "./detailAddressStyling.css";
 
-function DetailAddress() {
+function DetailAddress({selectedAddressId}) {
   return (
     <div className="detailAddressContainer">
       <h2 className="detailAddress">Alamat Pengiriman</h2>
@@ -11,7 +11,7 @@ function DetailAddress() {
         <div className="user-address">
           <div className="user">
             <User style={{fill: "white"}}/>
-            <p>Khidir karawita, +62-859-555-091</p>
+            <p>{selectedAddressId.fullName}, {selectedAddressId.phoneNumber}</p>
           </div>
           <div className="address">
             <MapPin style={{fill: "green"}}/>

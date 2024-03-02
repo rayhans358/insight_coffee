@@ -19,6 +19,29 @@
   font-size: 1.5rem;
   font-weight: 500;
   width: 50%;
-  border-top: 1px solid white;
   border-bottom: 1px solid white;
+  /* border: 1px solid white; */
+}
+
+.dashboard-container .table-dashboard .text-editDashboard {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.dashboard-container .table-dashboard .edit-dashboard span:hover {
+  text-decoration: underline;
+  color: rgb(0, 102, 255);
+  cursor: pointer;
+}
+
+.dashboard-container .table-dashboard .edit-okeDashboard {
+  color: white;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.dashboard-container .table-dashboard .edit-checked:hover {
+  color: #68dd76;
+  cursor: pointer;
 }

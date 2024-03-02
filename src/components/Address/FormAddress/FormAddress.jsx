@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./formAddressStyling.css";
 
-function FormAddress() {
-  const [fullName, setFullName] = useState("");
-  const [fullPhone, setFullPhone] = useState("");
-  const [fullStreet, setFullStreet] = useState("");
+function FormAddress({ 
+  fullName, setFullName, 
+  phoneNumber, setPhoneNumber, 
+  fullStreet, setFullStreet 
+  }) {
 
   function handleFullName(event) {
     const name = event.target.value;
@@ -14,7 +15,7 @@ function FormAddress() {
 
   function handleFullPhone(event) {
     const phone = event.target.value;
-    setFullPhone(phone) 
+    setPhoneNumber(phone) 
   };
 
   function handleFullStreet(event) {
@@ -32,7 +33,7 @@ function FormAddress() {
           </div>
           <div className="box-phone">
             <label>Nomor Handphone : </label>
-            <input type="nuber" id="fullPhone" name="fullPhone" className="full-phone" placeholder="Input Number Phone here" onChange={handleFullPhone} value={fullPhone}/>
+            <input type="nuber" id="fullPhone" name="fullPhone" className="full-phone" placeholder="Input Number Phone here" onChange={handleFullPhone} value={phoneNumber}/>
           </div>
         </div>
         <div className="box-street">
