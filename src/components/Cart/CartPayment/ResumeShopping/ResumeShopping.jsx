@@ -10,11 +10,10 @@ function ResumeShopping() {
   const navigate = useNavigate();
   const { selectedCourier, price } = location.state;
 
-  function handleNavigatePayment() {
-    navigate('/products', {state:{
-      selectedCourier,
-      price
-    }})
+  function handleNavigatePayment(address) {
+    navigate('/products', {
+      state:{ selectedCourier, price, setSelectedAddressId : address }
+    })
   };
 
   return (

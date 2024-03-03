@@ -8,12 +8,12 @@ import courier from "../../../../assets/images/courier.png";
 import ChooseCourier from "../../ChooseCourier/ChooseCourier";
 import TotalShopping from "../../TotalShopping/TotalShopping";
 
-function CourierShopping() {
+function CourierShopping(address) {
   const [selectedCourier, setSelectedCourier] = useState(null);
   const [price, setPrice] = useState(0);
   const navigate = useNavigate();
 
-  function handleNavigatePayment() {
+  function handleNavigatePayment({address}) {
     if (!selectedCourier) {
       Swal.fire({
         imageUrl: courier,
@@ -26,10 +26,9 @@ function CourierShopping() {
       });
       return;
     };
-    navigate('/carts/payment', {state:{
-      selectedCourier,
-      price
-    }})
+    navigate('/carts/payment', {
+      state:{ selectedCourier, price, setSelectedAddressId : address }
+    })
   };
 
   return (

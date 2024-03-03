@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./detailCheckoutStyling.css";
 
 import DetailAddress from "../../../Address/DetailAddress/DetailAddress";
 import DetailItems from "../../DetailItems/DetailItems";
-import ChooseAddress from "../../../Address/ChooseAddress/ChooseAddress";
 
-function DetailCheckout() {
+function DetailCheckout({ address, selectedAddressId }) {
   const navigate = useNavigate();
-  const [selectedAddressId, setSelectedAddressId] = useState('');
+
+  function handleChoosenAddress() {
+    navigate('/carts/choose-address', {
+      state: { setSelectedAddressId : address }
+    })
+  };
 
   return (
     <div className="detail-checkout">
@@ -17,10 +21,7 @@ function DetailCheckout() {
       <div className="detail-address">
         <DetailAddress selectedAddressId={selectedAddressId}/>
         <div className="choice-address">
-          <button onClick={() => {
-            <ChooseAddress setSelectedAddressId={setSelectedAddressId}/>
-            navigate('/carts/choose-address')
-          }}>
+          <button onClick={handleChoosenAddress}>
             <span>Pilih Alamat</span>
           </button>
           <button onClick={() => {

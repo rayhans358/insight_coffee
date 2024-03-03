@@ -29,30 +29,24 @@
 .choose-address .page-chooseAddress .box-address .address {
   display: flex;
   flex-direction: column;
-  column-gap: 20px;
   border-radius: 12px;
   padding: 10px 0;
   cursor: pointer;
-  margin-bottom: 16px;
+  margin-bottom: 25px;
   background: black;
   border: 2px solid white;
 }
 
 .choose-address .page-chooseAddress .box-address .label-radio {
   display: flex;
+  padding: 10px 20px;
   cursor: pointer;
   align-items: center;
 }
 
-.choose-address .page-chooseAddress .box-address .label-radio .radio {
-  margin-right: 15px;
-  margin-left: 10px;
-}
-
 .choose-address .page-chooseAddress .box-address .label-radio p {
   color: white;
-  text-align: left;
-  margin-right: 10px;
+  text-align: justify;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.57143;
@@ -86,6 +80,7 @@
   border: 2px solid white;
 }
 
+.choose-address .page-chooseAddress .box-address .address:hover,
 .choose-address .page-chooseAddress .box-address .submit-button .submit:hover {
   background: #b6895b;
   border: 2px solid #b6895b;
