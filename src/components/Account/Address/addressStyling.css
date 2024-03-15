@@ -11,7 +11,7 @@
 .address-container .address-account {
   display: flex;
   margin: 0 0 10px;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 12px;
   background: white;
   color: black;
@@ -30,6 +30,12 @@
   height: 15px;
   font-weight: 800;
   margin: auto 0;
+}
+
+.address-container .address-account:hover {
+  background: #b6895b;
+  color: white;
+  border: 2px solid white;
 }
 
 .address-container .table-address {

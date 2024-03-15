@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 
 import './navbarStyling.css';
-// import './navbarStyling.scss';
 
 import { config } from '../../config';
-import toggleDisplaySearchShop from '../../toggle/toggleDisplaySearchShop';
 import { addItem, clearAllItem, clearItem, reduceItem } from '../../app/features/actions/cartActions';
 import { formatRupiah, sumPrice } from '../../app/utils/currencyFormatter';
 import { setKeyword } from '../../app/features/actions/productActions';
+import toggleDisplaySearchShop from '../../toggle/toggleDisplaySearchShop';
+import secureCart from "../../assets/images/securecart.png";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -27,8 +27,8 @@ function Navbar() {
   useEffect(() => {
     toggleDisplaySearchShop();
     const auth = localStorage.getItem("auth") 
-    ? JSON.parse(localStorage.getItem("auth"))
-    : {};
+      ? JSON.parse(localStorage.getItem("auth"))
+      : {};
     setIsLoggedIn(!!auth.token)
   }, [navigate]);
 
@@ -105,7 +105,7 @@ function Navbar() {
           </Link>
           <Link to="/" id="shopping-cart-button">
             <ShoppingCart />
-            {cartItems.length > 0 && (
+            {isLoggedIn && cartItems.length > 0 && (
               <span className="quantity-badge">
                 {cartItems.reduce((total, item) => total + item.qty, 0)}
               </span>
@@ -126,50 +126,60 @@ function Navbar() {
 
         {/* Shopping Cart start */}
         <div className="shopping-cart" style={{ overflowY: 'auto' }}>
-          {cartItems.length === 0 ? (
-            <h4 style={{marginTop: '1rem'}}>Cart is Empty</h4>
-          ) : (
+          {isLoggedIn ? (
             <>
-            <div className="head-cart">
-              <h4>Keranjang</h4>
-              <h4 className='qty-cart'>{cartItems.reduce((total, item) => total + item.qty, 0)}</h4>
-            </div>
-            {cartItems.map((item, index) => (
-              <div key={index} className="cart-item">
-                <img src={`${config.api_host}/images/products/${item.image_url}`} alt={item.name} />
-                <div className="item-detail">
-                  <Trash2 className='remove-item' onClick={(event) => {
-                    event.stopPropagation();
-                    clearCart(item);
-                  }}/>
-                  <h3>{item.name}</h3>
-                  <div className="item-price">
-                    <div className="item-qty">
-                      <span style={{padding: '0 10px'}}>{formatRupiah(item.price)}</span>
-                      <div className="qty">
-                        <button id="minus" onClick={() => reduceCart(item)}>{minus}</button>
-                        <span> {item.qty} </span>
-                        <button id="plus" onClick={() => addCart(item)}>{plus}</button>
+              {cartItems.length === 0 ? (
+                <h4 style={{marginTop: '1rem'}}>Cart is Empty</h4>
+              ) : (
+                <>
+                <div className="head-cart">
+                  <h4>Keranjang</h4>
+                  <h4 className='qty-cart'>{cartItems.reduce((total, item) => total + item.qty, 0)}</h4>
+                </div>
+                {cartItems.map((item, index) => (
+                  <div key={index} className="cart-item">
+                    <img src={`${config.api_host}/images/products/${item.image_url}`} alt={item.name} />
+                    <div className="item-detail">
+                      <Trash2 className='remove-item' onClick={(event) => {
+                        event.stopPropagation();
+                        clearCart(item);
+                      }}/>
+                      <h3>{item.name}</h3>
+                      <div className="item-price">
+                        <div className="item-qty">
+                          <span style={{padding: '0 10px'}}>{formatRupiah(item.price)}</span>
+                          <div className="qty">
+                            <button id="minus" onClick={() => reduceCart(item)}>{minus} </button>
+                            <span> {item.qty} </span>
+                            <button id="plus" onClick={() => addCart(item)}>{plus}</button>
+                          </div>
+                        </div>
+                        <div className="total-price">
+                          {equal}
+                          <span style={{fontWeight: '600'}}> {formatRupiah(item.price * item.qty)}</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="total-price">
-                      {equal}
-                      <span style={{fontWeight: '600'}}> {formatRupiah(item.price * item.qty)}</span>
-                    </div>
                   </div>
+                ))}
+                <h4 className='text-total'>Total : <span>{formatRupiah(sumPrice(cartItems))}</span></h4>
+                <div className="button">
+                  <button className='delete-button' onClick={(event) => {
+                    event.stopPropagation();
+                    clearAll();
+                  }}>Delete All</button>
+                  <button className='checkout-button' onClick={() => {
+                    handleCheckout()
+                  }}>Checkout</button>
                 </div>
-              </div>
-            ))}
-            <h4 className='text-total'>Total : <span>{formatRupiah(sumPrice(cartItems))}</span></h4>
-            <div className="button">
-              <button className='delete-button' onClick={(event) => {
-                event.stopPropagation();
-                  clearAll();
-              }}>Delete All</button>
-              <button className='checkout-button' onClick={() => {
-                handleCheckout()
-              }}>Checkout</button>
-            </div>
+                </>
+              )}
+            </>
+          ) : (
+            <>
+            <img className="is-image-login" src={secureCart} alt={secureCart} />
+            <h4 className="is-navbar-login" >Silahkan Log In terlebih dahulu</h4>
+            <button className="button-navbar-login" onClick={() => navigate('/account/login')}>Log In</button>
             </>
           )}
         </div>

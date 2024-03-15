@@ -1,22 +1,16 @@
 import React from "react";
 import { MapPin, User } from "react-feather";
-import { useLocation } from "react-router-dom";
 
 import "./detailAddressStyling.css";
 
-function DetailAddress() {
-  const location = useLocation();
-  const selectedAddress = location.state ? location.state.setSelectedAddressId : null;
-  // console.log(selectedAddress, 'Selected Address');
-  // console.log(location.state, 'location state');
-  const fullName = selectedAddress && selectedAddress.fullName;
-  const phoneNumber = selectedAddress && selectedAddress.phoneNumber;
-  const fullStreet = selectedAddress && selectedAddress.fullStreet;
-  const kelurahan = selectedAddress && selectedAddress.kelurahan;
-  const kecamatan = selectedAddress && selectedAddress.kecamatan;
-  const kabupaten = selectedAddress && selectedAddress.kabupaten;
-  const provinsi = selectedAddress && selectedAddress.provinsi;
-  // console.log(fullName, 'FN');
+function DetailAddress({address}) {
+  const fullName = address && address.fullName;
+  const phoneNumber = address && address.phoneNumber;
+  const fullStreet = address && address.fullStreet;
+  const kelurahan = address && address.kelurahan;
+  const kecamatan = address && address.kecamatan;
+  const kabupaten = address && address.kabupaten;
+  const provinsi = address && address.provinsi;
 
   return (
     <div className="detailAddressContainer">

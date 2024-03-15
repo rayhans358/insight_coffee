@@ -9,7 +9,7 @@ export async function getAddress() {
   return await axios
     .get(`${config.api_host}/delivery-address`, {
     headers: {
-        authorization: `${token}`
+      authorization: `${token}`
     }
   });
 };

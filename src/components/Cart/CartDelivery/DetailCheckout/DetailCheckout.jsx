@@ -6,20 +6,21 @@ import "./detailCheckoutStyling.css";
 import DetailAddress from "../../../Address/DetailAddress/DetailAddress";
 import DetailItems from "../../DetailItems/DetailItems";
 
-function DetailCheckout({ address, selectedAddressId }) {
+function DetailCheckout() {
   const navigate = useNavigate();
+  let address = localStorage.getItem("address")
+    ? JSON.parse(localStorage.getItem("address"))
+    : {};
 
   function handleChoosenAddress() {
-    navigate('/carts/choose-address', {
-      state: { setSelectedAddressId : address }
-    })
+    navigate('/carts/choose-address')
   };
-
+  
   return (
     <div className="detail-checkout">
       {/* Detail Address */}
       <div className="detail-address">
-        <DetailAddress selectedAddressId={selectedAddressId}/>
+        <DetailAddress address={address}/>
         <div className="choice-address">
           <button onClick={handleChoosenAddress}>
             <span>Pilih Alamat</span>

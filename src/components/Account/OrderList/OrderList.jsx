@@ -8,13 +8,15 @@ function OrderList() {
       <h3 className="text-orderList">Pemesanan</h3>
       <table className="table-orderList">
         <tr>
-          <th>Order ID</th>
+          <th style={{width: '5%'}}>Order ID</th>
+          <th>Detail</th>
           <th>Jumlah</th>
           <th>Total</th>
           <th>Status</th>
         </tr>
         <tr>
-          <td>#4</td>
+          <td style={{width: '5%'}}>#4</td>
+          <td>Fulan</td>
           <td>1</td>
           <td>Rp. 100.000</td>
           <td>Waiting Payment</td>

@@ -2,10 +2,10 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 
+import { listen } from './app/listener';
 import Home from './pages/Home/Home';
 import Product from './pages/Product/Product';
 import About from './pages/About/About';
-import { listen } from './app/listener';
 import Contact from './pages/Contact/Contact';
 import CartProduct from './pages/Cart/CartProduct/CartProduct';
 import CartDelivery from './pages/Cart/CartDelivery/CartDelivery';
@@ -15,6 +15,7 @@ import CartPayment from './pages/Cart/CartPayment/CartPayment';
 import PageLogin from './pages/Account/Auth/Login/PageLogin';
 import PageRegister from './pages/Account/Auth/Register/PageRegister';
 import Account from './pages/Account/Account/Account';
+import AccountNewAddress from './components/Account/Address/AccountNewAddress/AccountNewAddress';
 
 function App() {
   useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
           <Route path='/account/dashboard' exact element={<Account />}/>
           <Route path='/account/order-list' exact element={<Account />}/>
           <Route path='/account/address' exact element={<Account />}/>
+          <Route path='/account/new-address' exact element={<AccountNewAddress />}/>
         </Routes>
       </BrowserRouter>
     </div>

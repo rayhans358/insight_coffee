@@ -26,10 +26,9 @@ function ChooseAddress() {
   }, []);
 
   function handleSelectAddress(address) {
+    localStorage.setItem("address", JSON.stringify(address));
     // console.log(address, 'address');
-    navigate('/carts/delivery', { 
-      state: { setSelectedAddressId : address }
-    })
+    navigate('/carts/delivery')
   };
 
   return (
@@ -47,7 +46,7 @@ function ChooseAddress() {
               </div>
             ))}
             <div className="submit-button">
-              <input className="submit" type="submit" value="Edit Alamat" onClick={() => {navigate('/carts/edit-address')}} />
+              <input className="submit" type="submit" value="Edit Alamat"/>
               <input className="submit" type="submit" value="Tambah Alamat Baru" onClick={() => {navigate('/carts/new-address')}} />
             </div>
           </div>

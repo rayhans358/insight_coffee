@@ -19,7 +19,7 @@ export async function logoutUser() {
 	return await axios
     .post(`${config.api_host}/auth/logout`, null, {
       headers: {
-        authorization: `Bearer ${token}`,
+        authorization: `${token}`,
       }
     })
     .then((res) => {

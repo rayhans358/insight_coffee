@@ -19,6 +19,7 @@
 .box-region .select-region select {
   cursor: pointer;
   padding: 10px;
+  width: 21rem;
 }
 
 .box-region .select-region option {

@@ -26,7 +26,7 @@ function NewAddress() {
         icon: "warning",
         title: "Harap isi nama lengkap, nomor handphone serta jalan terlebih dahulu",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 1500
       });
       return;
     };
@@ -36,7 +36,7 @@ function NewAddress() {
         icon: "warning",
         title: "Harap pilih wilayah terlebih dahulu",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 1500
       });
       return;
     };
@@ -52,16 +52,16 @@ function NewAddress() {
     };
 
     createAddress(payload)
-      .then((response) => {
+      .then(() => {
         if (payload) {
           Swal.fire({
             icon: "success",
             title: "Anda berhasil menambahkan alamat",
             showConfirmButton: false,
-            timer: 2000,
+            timer: 2000
           });
         }
-        console.log("Address created successfully:", response.data);
+        // console.log("Address created successfully:", response.data);
         navigate("/carts/delivery");
       })
       .catch((err) => {
@@ -70,7 +70,7 @@ function NewAddress() {
           icon: "error",
           title: "Terjadi kesalahan saat menambahkan alamat",
           showConfirmButton: false,
-          timer: 2000,
+          timer: 2000
         });
       });
   };
@@ -102,7 +102,7 @@ function NewAddress() {
             />
           </div>
           <div className="submit-button">
-            <input className="submit" type="submit" value="Tambah Alamat Baru" onClick={handleClickSubmit} />
+            <input className="submit" type="submit" value="Tambah Alamat" onClick={handleClickSubmit} />
           </div>
         </div>
       </section>

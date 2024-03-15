@@ -4,7 +4,6 @@
   --wht: #fff;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -254,6 +253,38 @@
   font-size: 1rem;
   border-radius: 20px;
   margin: 1rem auto;
+  cursor: pointer;
+}
+
+.navbar .shopping-cart .is-image-login {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0;
+  margin: 10px auto 0;
+}
+
+.navbar .shopping-cart .is-navbar-login {
+  font-size: 1.6rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .shopping-cart .button-navbar-login {
+  display: flex;
+  margin: 0 auto;
+  background-color: #512da8;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   cursor: pointer;
 }
 

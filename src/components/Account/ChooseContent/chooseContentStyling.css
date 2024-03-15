@@ -31,6 +31,7 @@
   height: 100%;
   border-radius: 10px;
   border: 3px solid black;
+  cursor: pointer;
 }
 
 .choosecontent-container .fill-choosecontent .icon-content .icons {
@@ -47,13 +48,7 @@
   font-weight: 700;
 }
 
-.choosecontent-container .fill-choosecontent .icon-content:hover{
-  background: #b6895b;
-  color: white;
-  cursor: pointer;
-}
-
-.choosecontent-container .fill-choosecontent.active,
+.choosecontent-container .fill-choosecontent .icon-content:hover,
 .choosecontent-container .fill-choosecontent .icon-content.active {
   background: #b6895b;
   color: white;

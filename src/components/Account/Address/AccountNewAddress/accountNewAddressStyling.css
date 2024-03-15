@@ -1,0 +1,75 @@
+.newAddress-container {
+  padding: 10rem 2.5% 1.4rem;
+}
+
+.newAddress-container h2 {
+  text-align: justify;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: white;
+  display: block;
+  line-height: 1.33333;
+}
+
+.newAddress-container .content-newAddress-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.newAddress-container .content-newAddress-container h2 {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+  display: block;
+  line-height: 1.33333;
+  margin-bottom: 3rem;
+}
+
+.newAddress-container .content-newAddress-container .page-newAddress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0px;
+}
+
+.newAddress-container .content-newAddress-container .page-newAddress-container .box-newAddress-container {
+  padding: 24px;
+  justify-content: center;
+  gap: 5rem;
+  display: flex;
+}
+
+.newAddress-container .content-newAddress-container .page-newAddress-container .submit-button-container {
+  width: 25%;
+  margin: 0 auto;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-newAddress-container .submit-button-container .cancel,
+.page-newAddress-container .submit-button-container .submit {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 525;
+  background: white;
+  height: 100%;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.page-newAddress-container .submit-button-container .cancel:hover,
+.page-newAddress-container .submit-button-container .submit:hover {
+  background: #b6895b;
+  color: white;
+  border: 2px solid white;
+}

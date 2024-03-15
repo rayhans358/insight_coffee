@@ -1,5 +1,3 @@
-/* Modal Box */
-/* Item Detail */
 .modal {
   display: none;
   position: fixed;
@@ -9,7 +7,6 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 9999;
 }
 
 .modal .modal-container {

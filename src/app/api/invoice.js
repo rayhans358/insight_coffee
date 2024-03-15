@@ -9,7 +9,7 @@ export async function getInvoiceByOrderId(order_id) {
   return await axios
     .get(`${config.api_host}/invoices/${order_id}`, {
       headers: {
-        authorization: `Bearer ${token}`,
+        authorization: `${token}`
       }
     })
 };

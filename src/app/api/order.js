@@ -1,19 +1,15 @@
 import axios from "axios";
 import { config } from "../../config";
 
-export async function getOrder(params) {
+export async function getOrder() {
   let { token } = localStorage.getItem("auth")
     ? JSON.parse(localStorage.getItem("auth"))
     : {};
   
   return await axios
     .get(`${config.api_host}/orders`, {
-      params: {
-        limit: params.limit,
-        skip: params.page * params.limit - params.limit
-      },
       headers: {
-        authorization: `Bearer ${token}`,
+        authorization: `${token}`,
       }
     })
 };

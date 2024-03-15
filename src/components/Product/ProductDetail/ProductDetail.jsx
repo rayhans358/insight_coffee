@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { ShoppingCart, Star, X } from "react-feather";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
 
 import "./productDetailStyling.css";
 
 import { config } from "../../../config";
-import toggleModalBox from "../../../toggle/toggleModalBox";
 import { formatRupiah } from "../../../app/utils/currencyFormatter";
 import { addItem } from "../../../app/features/actions/cartActions";
+import toggleModalBox from "../../../toggle/toggleModalBox";
+import secureCart from "../../../assets/images/securecart.png";
 
 function ProductDetail({ product }) {
   const dispatch = useDispatch();
@@ -20,7 +22,20 @@ function ProductDetail({ product }) {
   }, []);
 
   function addProduct(product) {
-    dispatch(addItem(product))
+    const isLoggedIn = !!localStorage.getItem("auth");
+    if (isLoggedIn) {
+      dispatch(addItem(product))
+    } else {
+      Swal.fire({
+        title: "Something gone wrong! Please Log In first!",
+        imageUrl: secureCart,
+        imageHeight: 100,
+        imageWidth: 100,
+        imageAlt: secureCart,
+        showConfirmButton: false,
+        timer: 2000
+      });
+    };
   };
 
   if (!product || !product.image_url) {

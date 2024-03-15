@@ -2,21 +2,24 @@ import React, { useEffect, useState } from "react";
 import { Eye, ShoppingCart, Star } from "react-feather";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import './productCardStyling.css';
 
 import { config } from "../../../config";
 import { formatRupiah } from "../../../app/utils/currencyFormatter";
 import { addItem } from "../../../app/features/actions/cartActions";
+import { getCategoryTagSearch, getProducts } from "../../../app/api/product";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import CategoryTag from "../CategoryTag/CategoryTag";
-import { getCategoryTagSearch, getProducts } from "../../../app/api/product";
+import secureCart from "../../../assets/images/securecart.png";
 
 function ProductCard() {
+  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const keyword = useSelector((state) => state.product?.keyword || '');
-  const dispatch = useDispatch();
+  const isLoggedIn = !!localStorage.getItem("auth");
   
   useEffect(() => {
     async function fetchProducts() {
@@ -27,8 +30,8 @@ function ProductCard() {
   
       } catch (error) {
         console.error('Error fetching products:', error);
-      }
-    }
+      };
+    };
 
     async function fetchProductsWithKeyword(keywordParams) {
       try {
@@ -37,14 +40,14 @@ function ProductCard() {
         // console.log(productsData.data, 'search product');
       } catch (error) {
         console.error('Error fetching products by keyword:', error);
-      }
-    }
+      };
+    };
 
     if (keyword) {
       fetchProductsWithKeyword(keyword);
     } else {
       fetchProducts();
-    }
+    };
   }, [keyword]);
 
   async function fetchProductsByCategory(categoryId) {
@@ -70,7 +73,19 @@ function ProductCard() {
   };
 
   function addProduct(product) {
-    dispatch(addItem(product))
+    if (isLoggedIn) {
+      dispatch(addItem(product))
+    } else {
+      Swal.fire({
+        title: "Something gone wrong! Please Log In first!",
+        imageUrl: secureCart,
+        imageHeight: 100,
+        imageWidth: 100,
+        imageAlt: secureCart,
+        showConfirmButton: false,
+        timer: 2000
+      });
+    };
   };
 
   return (

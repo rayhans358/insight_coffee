@@ -1,9 +1,8 @@
 import React from "react";
 import { GitHub, Instagram, Linkedin } from "react-feather";
+import { Link } from "react-router-dom";
 
 import './footerStyling.css';
-import { Link } from "react-router-dom";
-// import './footerStyling.scss';
 
 function Footer() {
   return (

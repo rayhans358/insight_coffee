@@ -9,12 +9,12 @@ import { logoutUser } from '../../../app/api/auth';
 function ChooseContent({ setSelectedPage }) {
   const navigate = useNavigate();
 
-  const handleNavigation = (route) => {
+  function handleNavigation(route) {
     setSelectedPage(route);
     navigate(`/account/${route}`);
   };
 
-  const handleLogout = async () => {
+  async function handleLogout() {
     try {
       await logoutUser();
       navigate('/account/login');

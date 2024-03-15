@@ -9,9 +9,6 @@ import Address from '../Address/Address';
 function PageContent({ selectedPage }) {
   return (
     <section id="pagecontent-container" className="pagecontent-container">
-      {/* <Dashboard />
-      <OrderList />
-      <Address /> */}
       {selectedPage === 'dashboard' && <Dashboard/>}
       {selectedPage === 'order-list' && <OrderList/>}
       {selectedPage === 'address' && <Address/>}
