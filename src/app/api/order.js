@@ -9,20 +9,28 @@ export async function getOrder() {
   return await axios
     .get(`${config.api_host}/orders`, {
       headers: {
-        authorization: `${token}`,
+        Authorization: `${token}`,
       }
     })
 };
 
 export async function createOrder(payload) {
-  let { token } = localStorage.getItem("auth")
-    ? JSON.parse(localStorage.getItem("auth"))
-    : {};
-  
-  return await axios
-    .post(`${config.api_host}/orders`, payload, {
-      headers: {
-        authorization: `Bearer ${token}`,
-      }
-    })
+  const authData = localStorage.getItem("auth")
+   ? JSON.parse(localStorage.getItem("auth"))
+   : {};
+  const token = authData.token;
+  console.log(token, 'Token');
+
+  try {
+    const response = await axios
+      .post(`${config.api_host}/orders`, payload, {
+        headers: {
+          Authorization: `${token}`,
+        }
+      });
+    return response.data;
+
+  } catch (error) {
+    throw error;
+  };
 };

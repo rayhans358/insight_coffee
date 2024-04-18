@@ -8,6 +8,23 @@
   margin: 5px 0 30px;
 }
 
+.orderList-container .loadingOrder-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.orderList-container .loadingOrder-container .loadingAddress-content {
+  height: 100%;
+}
+
+.orderList-container .loadingOrder-container .loadingOrder-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
 .orderList-container .table-orderList {
   border-collapse: collapse;
   width: 100%;
@@ -19,16 +36,27 @@
   font-size: 1.5rem;
   font-weight: 500;
   width: 20%;
-  /* border: 1px solid white; */
 }
 
-.orderList-container .table-orderList td {
+.orderList-container .table-orderList .order-empty {
+  padding: 8px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-top: 1px solid white;
+}
+
+.orderList-container .table-orderList .order-empty img {
+  height: 125px;
+  width: 125px;
+}
+
+.orderList-container .table-orderList .fill-orderContent {
   padding: 8px;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 500;
   width: 20%;
-  border: 1px solid white;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }

@@ -256,6 +256,7 @@
   cursor: pointer;
 }
 
+.navbar .shopping-cart .is-image-emptyCart,
 .navbar .shopping-cart .is-image-login {
   width: 150px;
   height: 150px;
@@ -266,6 +267,7 @@
   margin: 10px auto 0;
 }
 
+.navbar .shopping-cart .is-navbar-emptyCart,
 .navbar .shopping-cart .is-navbar-login {
   font-size: 1.6rem;
   margin: 1rem auto;

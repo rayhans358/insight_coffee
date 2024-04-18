@@ -2,8 +2,11 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { faFacebookF, faGithub, faGoogle, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import "./loginStyling.css";
+
+import logInUser from "../../../assets/images/logIn.png";
 import { loginUser } from '../../../app/api/auth';
 import AuthContext from '../../../app/context/AuthProvider';
 
@@ -30,19 +33,31 @@ function Login() {
 
     try {
       const response = await loginUser({ email, password });
-      console.log(response?.data, "31");
-      //console.log(JSON.stringify(response));
+      const fullName = response?.data?.user?.fullName;
       const accessToken = response?.data?.token;
-      console.log(accessToken, "36");
+      console.log(accessToken, "accessToken");
+
       localStorage.setItem("auth", JSON.stringify({
         user: response.data.user,
         token: accessToken
-      }))
+      }));
+
+      Swal.fire({
+        imageUrl: logInUser,
+        imageWidth: 225,
+        imageHeight: 225,
+        imageAlt: logInUser,
+        title: `Welcome Back, ${fullName}!`,
+        showConfirmButton: false,
+        timer: 1500
+      });
+
       setAuth({ 
         email,
         password,
         accessToken
       });
+
       setEmail('');
       setPassword('');
       navigate("/account/dashboard");

@@ -38,6 +38,23 @@
   border: 2px solid white;
 }
 
+.address-container .loadingAddress-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.address-container .loadingAddress-container .loadingAddress-content {
+  height: 100%;
+}
+
+.address-container .loadingAddress-container .loadingAddress-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
 .address-container .table-address {
   border-collapse: collapse;
   width: 100%;

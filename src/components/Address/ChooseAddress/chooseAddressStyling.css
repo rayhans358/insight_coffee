@@ -19,6 +19,23 @@
   border-radius: 8px;
 }
 
+.choose-address .page-chooseAddress .loadingAddresses-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.choose-address .page-chooseAddress .loadingAddresses-container .loadingAddresses-content {
+  height: 100%;
+}
+
+.choose-address .page-chooseAddress .loadingAddresses-container .loadingAddresses-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
 .choose-address .page-chooseAddress .box-address {
   padding: 24px;
   gap: 16px;

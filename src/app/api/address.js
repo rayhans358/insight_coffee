@@ -9,7 +9,7 @@ export async function getAddress() {
   return await axios
     .get(`${config.api_host}/delivery-address`, {
     headers: {
-      authorization: `${token}`
+      Authorization: `${token}`
     }
   });
 };
@@ -21,7 +21,7 @@ export async function getAddressById(addressId) {
 
   return await axios.get(`${config.api_host}/delivery-address/${addressId}`, {
     headers: {
-      authorization: `${token}`
+      Authorization: `${token}`
     }
   });
 };
@@ -34,7 +34,7 @@ export async function createAddress(payload) {
   return await axios
     .post(`${config.api_host}/delivery-address`, payload, {
       headers: {
-        authorization: `${token}`
+        Authorization: `${token}`
       }
     })
 };

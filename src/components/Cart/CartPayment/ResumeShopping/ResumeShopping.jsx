@@ -1,82 +1,76 @@
 import React from "react";
 import { useLocation, useNavigate} from "react-router-dom";
+import Swal from "sweetalert2";
 
 import "./resumeShoppingStyling.css";
 
+import orderSucessCreated from "../../../../assets/images/orderSucessCreated.png";
+import orderFailed from "../../../../assets/images/orderFailed.png";
 import TotalShopping from "../../TotalShopping/TotalShopping";
 import { createOrder } from "../../../../app/api/order";
 
-function ResumeShopping() {
+function ResumeShopping({ selectedMethod }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const { selectedCourier, price } = location.state;
-  // const { address, cart } = localStorage;
-  // const cartItems = JSON.parse(cart);
+  const { selectedCourier, price  } = location.state;
   const address = localStorage.getItem("address")
     ? JSON.parse(localStorage.getItem("address"))
     : {};
   const cartItems = localStorage.getItem("cart")
     ? JSON.parse(localStorage.getItem("cart"))
     : {};
-  // console.log(address, 'address');
-  // console.log(cart, 'cart');
-  // console.log(location.state);
-
-  // function generateInvoice(orderNumber, purchaseDate) {
-  //   const invoiceNumber = orderNumber ? `INV-${orderNumber}` : '';
-  //   const currentTime = new Date();
-  //   const options = { hour12: false };
-  //   const newPurchaseDate = currentTime.toLocaleString('id-ID', options).replace(/\./g, ':');
-    
-  //   const newInvoice = {
-  //     invoiceNumber: invoiceNumber,
-  //     orderNumber: orderNumber || '',
-  //     purchaseDate: purchaseDate || newPurchaseDate
-  //   };
-  //   console.log(newInvoice, 'newInvoice');
-
-  //   return newInvoice;
-  // };
 
   async function handlePayment() {
     try {
-      const cartName = cartItems.map(item => item.name);
-      const unitPrice = cartItems.map(item => item.price);
-      const qty = cartItems.map(item => item.qty).length;
-      const totalQty = cartItems.reduce((total, item) => total + item.qty, 0);
-      const totalPrice = cartItems.reduce((total, item) => total + (item.qty * item.price), 0);
+      if (!selectedMethod) {
+        Swal.fire({
+          imageUrl: orderFailed,
+          imageWidth: 225,
+          imageHeight: 225,
+          imageAlt: orderFailed,
+          title: `You have not choosen a payment method, please choose a payment method first!`,
+          showConfirmButton: false,
+          timer: 1500
+        });
+        return;
+      };
+
+      let totalQty = 0;
+      let totalShopping = 0;
+      totalQty = cartItems.reduce((total, item) => total + parseInt(item.qty), 0);
+      let subTotal = cartItems.reduce((total, item) => total + (parseInt(item.qty) * parseInt(item.price)), 0);
+      totalShopping += subTotal + price;
+
+      const order_items = cartItems.map(item => ({
+        name: item.name,
+        price: parseInt(item.price),
+        qty: parseInt(item.qty),
+        product: item._id
+      }))
       
       const newOrder = await createOrder({
-        fullName: address.fullName,
-        phoneNumber: address.phoneNumber,
-        items: cartName,
-        unit_price: unitPrice,
-        qty: qty,
-        total_qty: totalQty,
-        totalPrice: totalPrice,
-        totalShopping: totalPrice + price,
-        // paymentMethod: method,
         delivery_courier: selectedCourier, 
         delivery_fee: price,
         delivery_address: address,
+        totalQty: totalQty,
+        subTotal: subTotal,
+        totalShopping: totalShopping,
+        order_items: order_items,
+        paymentMethod: selectedMethod,
         status: 'waiting_payment'
       });
 
-      // const newOrderResponse = newOrder.data
-      // const invoice = generateInvoice(newOrderResponse);
-      console.log(address.fullName, 'FN');
-      console.log(address.phoneNumber, 'PN');
-      console.log(cartName, 'Cart Name');
-      console.log(unitPrice, 'Unit Price');
-      console.log(qty, 'qty');
-      console.log(totalQty, 'Total Qty');
-      console.log(totalPrice, 'Total Price');
-      console.log(totalPrice + price, 'Total Shopping');
-      console.log(selectedCourier, 'selectedCourier');
-      console.log(price, 'price');
-      console.log(address, 'address');
-      console.log(newOrder, 'order');
-      // console.log(method, 'method');
+      Swal.fire({
+        imageUrl: orderSucessCreated,
+        imageWidth: 225,
+        imageHeight: 225,
+        imageAlt: orderSucessCreated,
+        title: `Congratulations, you successfully created an order`,
+        showConfirmButton: false,
+        timer: 1500
+      });
+
+      console.log(newOrder, 'newOrder');
       navigate('/products');
 
     } catch (error) {
@@ -92,9 +86,7 @@ function ResumeShopping() {
           price={price}
         />
         <div className="box-btn">
-          <button className="payment-btn"
-           onClick={handlePayment}
-           >
+          <button className="payment-btn" onClick={handlePayment}>
             <span>Bayar</span>
           </button>
         </div>

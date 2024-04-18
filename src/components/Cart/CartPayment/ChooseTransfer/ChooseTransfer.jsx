@@ -6,10 +6,10 @@ import "./chooseTransferStyling.css";
 import { config } from "../../../../config";
 import { getBanks, getMiniMarkets } from "../../../../app/api/bank";
 
-function ChooseTransfer() {
+function ChooseTransfer({ setSelectedMethod }) {
   const [banks, setBanks] = useState([]);
   const [markets, setMarkets] = useState([]);
-  const [selectedMethod, setSelectedMethod] = useState(null);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
 
   useEffect(() => {
     fetchBanks();
@@ -20,6 +20,7 @@ function ChooseTransfer() {
     try {
       const selectBank = await getBanks();
       setBanks(selectBank.data.data);
+      
     } catch (err) {
       console.error("Error fetching banks:", err);
     };
@@ -29,6 +30,7 @@ function ChooseTransfer() {
     try {
       const selectMiniMarket = await getMiniMarkets();
       setMarkets(selectMiniMarket.data.data);
+
     } catch (err) {
       console.error("Error fetching mini markets:", err);
     };
@@ -36,6 +38,7 @@ function ChooseTransfer() {
 
   function handleMethodClick(method) {
     setSelectedMethod(method);
+    setSelectedPaymentMethod(method);
   };
 
   return (
@@ -48,7 +51,7 @@ function ChooseTransfer() {
           <div className="bank" key={index} onClick={() => handleMethodClick(bank)}>
             <img src={`${config.api_host}/images/banks/${bank.image_url}`} alt={bank.name} />
             <p>{bank.name}</p>
-            {selectedMethod && selectedMethod._id === bank._id && <Check className="check" />}
+            {selectedPaymentMethod && selectedPaymentMethod._id === bank._id && <Check className="check" />}
           </div>
         ))}
       </div>
@@ -59,7 +62,7 @@ function ChooseTransfer() {
           <div className="another" key={index} onClick={() => handleMethodClick(market)}>
             <img src={`${config.api_host}/images/mini-markets/${market.image_url}`} alt={market.name} />
             <p>{market.name}</p>
-            {selectedMethod && selectedMethod._id === market._id && <Check className="check" />}
+            {selectedPaymentMethod && selectedPaymentMethod._id === market._id && <Check className="check" />}
           </div>
         ))}
       </div>

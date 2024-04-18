@@ -25,13 +25,13 @@ function Product() {
               <span>Order  </span>
               <span>Pick-Up  </span>
               <span>Delivery  </span>
+              <span>Dine In  </span>
             </div>
           </div>
         </div>
         <ProductCard/>
       </section>
 
-      {/* Modal Box Item Detail Start */}
       <ProductDetail/>
       <Footer/>
     </div>

@@ -6,12 +6,13 @@ import Swal from 'sweetalert2';
 
 import './navbarStyling.css';
 
+import cartEmpty from "../../assets/images/cartEmpty.png";
+import cartSecure from "../../assets/images/cartSecure.png";
+import toggleDisplaySearchShop from '../../toggle/toggleDisplaySearchShop';
 import { config } from '../../config';
 import { addItem, clearAllItem, clearItem, reduceItem } from '../../app/features/actions/cartActions';
 import { formatRupiah, sumPrice } from '../../app/utils/currencyFormatter';
 import { setKeyword } from '../../app/features/actions/productActions';
-import toggleDisplaySearchShop from '../../toggle/toggleDisplaySearchShop';
-import secureCart from "../../assets/images/securecart.png";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -129,7 +130,11 @@ function Navbar() {
           {isLoggedIn ? (
             <>
               {cartItems.length === 0 ? (
-                <h4 style={{marginTop: '1rem'}}>Cart is Empty</h4>
+                <>
+                <img className="is-image-emptyCart" src={cartEmpty} alt={cartEmpty} />
+                <h4 className="is-navbar-emptyCart">Cart is Empty</h4>
+                <h4 className="is-navbar-emptyCart">Let's go shopping first</h4>
+                </>
               ) : (
                 <>
                 <div className="head-cart">
@@ -177,7 +182,7 @@ function Navbar() {
             </>
           ) : (
             <>
-            <img className="is-image-login" src={secureCart} alt={secureCart} />
+            <img className="is-image-login" src={cartSecure} alt={cartSecure} />
             <h4 className="is-navbar-login" >Silahkan Log In terlebih dahulu</h4>
             <button className="button-navbar-login" onClick={() => navigate('/account/login')}>Log In</button>
             </>

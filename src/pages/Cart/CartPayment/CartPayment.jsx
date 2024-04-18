@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./cartPaymentStyling.css";
 
@@ -8,16 +8,16 @@ import DetailPayment from "../../../components/Cart/CartPayment/DetailPayment/De
 import ResumeShopping from "../../../components/Cart/CartPayment/ResumeShopping/ResumeShopping";
 
 function CartPayment() {
+  const [selectedMethod, setSelectedMethod] = useState(null);
+
   return (
     <div>
       <Navbar/>
       <section id="cart-payments" className="cart-payments">
         <h2 className="text-payments">Pembayaran</h2>
         <div className="page-payments">
-          {/* Detail Payment */}
-          <DetailPayment/>
-          {/* Resume Shopping */}
-          <ResumeShopping/>
+          <DetailPayment setSelectedMethod={setSelectedMethod}/>
+          <ResumeShopping selectedMethod={selectedMethod}/>
         </div>
       </section>
       <Footer/>

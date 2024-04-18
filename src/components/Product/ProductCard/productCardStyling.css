@@ -5,6 +5,23 @@
   margin-top: 4rem;
 }
 
+.row .loadingProducts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.row .loadingProducts-container .loadingProducts-content {
+  height: 100%;
+}
+
+.row .loadingProducts-container .loadingProducts-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
 .row .product-card {
   text-align: center;
   border: 1px solid #666;

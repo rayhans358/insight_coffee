@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 import "./registerStyling.css";
 
-import created from "../../../assets/images/createdAccount.png";
+import register from "../../../assets/images/register.png";
 import { registerUser } from '../../../app/api/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -78,15 +78,19 @@ function Register() {
     };
 
     try {
-      const response = await registerUser({ fullName, email, phoneNumber, password });
-      console.log(response?.data, "68");
-      // console.log(JSON.stringify(response));
+      await registerUser({ 
+        fullName, 
+        email, 
+        phoneNumber, 
+        password 
+      });
+
       Swal.fire({
-        imageUrl: created,
-        imageWidth: 300,
-        imageHeight: 300,
-        imageAlt: "Created Account image",
-        title: "Congratulations!",
+        imageUrl: register,
+        imageWidth: 225,
+        imageHeight: 225,
+        imageAlt: register,
+        title: `Congratulations ${fullName}!`,
         text: "Your account has been successfully created. Please go to the Log In page.",
         confirmButtonText: "Log In"
       })

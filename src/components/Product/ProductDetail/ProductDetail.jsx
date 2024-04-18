@@ -10,7 +10,7 @@ import { config } from "../../../config";
 import { formatRupiah } from "../../../app/utils/currencyFormatter";
 import { addItem } from "../../../app/features/actions/cartActions";
 import toggleModalBox from "../../../toggle/toggleModalBox";
-import secureCart from "../../../assets/images/securecart.png";
+import cartSecure from "../../../assets/images/cartSecure.png";
 
 function ProductDetail({ product }) {
   const dispatch = useDispatch();
@@ -28,10 +28,10 @@ function ProductDetail({ product }) {
     } else {
       Swal.fire({
         title: "Something gone wrong! Please Log In first!",
-        imageUrl: secureCart,
+        imageUrl: cartSecure,
         imageHeight: 100,
         imageWidth: 100,
-        imageAlt: secureCart,
+        imageAlt: cartSecure,
         showConfirmButton: false,
         timer: 2000
       });

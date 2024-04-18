@@ -5,7 +5,7 @@ import "./detailPaymentStyling.css";
 import DetailAddress from "../../../Address/DetailAddress/DetailAddress";
 import ChooseTransfer from "../ChooseTransfer/ChooseTransfer";
 
-function DetailPayment() {
+function DetailPayment({ setSelectedMethod }) {
   let address = localStorage.getItem("address")
     ? JSON.parse(localStorage.getItem("address"))
     : {};
@@ -15,7 +15,7 @@ function DetailPayment() {
       <div className="detailed-address">
         <DetailAddress address={address}/>
       </div>
-      <ChooseTransfer/>
+      <ChooseTransfer setSelectedMethod={setSelectedMethod}/>
     </div>
   );
 };

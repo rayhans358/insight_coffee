@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 import "./detailCartsStyling.css";
 
-import empty from "../../../../assets/images/empty.png";
+import cartEmpty from "../../../../assets/images/cartEmpty.png";
 import { config } from "../../../../config";
 import { addItem, clearItem, reduceItem } from "../../../../app/features/actions/cartActions";
 import { formatRupiah } from "../../../../app/utils/currencyFormatter";
@@ -52,8 +52,8 @@ function DetailCarts() {
       <h2>Keranjang</h2>
       {cartItems.length === 0 ? (
         <div className="empty">
-          <img src={empty} alt="empty" />
-          <h3>Cart is Empty</h3>
+          <img src={cartEmpty} alt={cartEmpty} />
+          <h3>Cart is empty</h3>
           <h3>Let's go shopping first</h3>
         </div>
       ) : (

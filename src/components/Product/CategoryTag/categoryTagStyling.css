@@ -14,19 +14,44 @@
   padding: 10px 59px;
 }
 
+.category-list .allProducts {
+  padding: 0 20px 0 0;
+  color: white;
+}
+
 .category-list h3,
 .tag-list h3{
   padding: 0 20px 0 0;
   color: #fd8904;
 }
 
+.category-list .loadingCategoriesTags-text,
+.tag-list .loadingCategoriesTags-text {
+  display: flex;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.category-list .allProducts.active,
+.category-list p.active {
+  color: #ffa500;
+}
+
+.tag-list p.active {
+  color: #ffa500;
+  background-color: white;
+  display: block;
+  border-bottom: 0.3rem solid #ffa500;
+}
+
+.category-list .allProducts,
 .category-list p {
   padding: 0 10px 0 0;
   display: flex;
   margin: 0 0 0 20px;
   font-size: 27px;
   font-weight: 600;
-  color: #fff;
+  color: white;
   cursor: pointer;
 }
 
@@ -35,24 +60,24 @@
   padding: 0 10px;
   font-size: 27px;
   font-weight: 600;
-  color: #fff;
+  color: white;
   cursor: pointer;
 }
 
-.category-list p:hover,
-.tag-list p:hover {
-  color: #6d3d0fc5;
+.category-list .allProducts:hover,
+.category-list p:hover {
+  color: #ffa500;
 }
 
 .tag-list p:hover {
-  background-color: #fff;
+  color: #ffa500;
+  background-color: white;
 }
 
 .tag-list p::after {
   content: '';
   display: block;
-  padding-bottom: 0.20rem;
-  border-bottom: 0.3rem solid #b6895b;
+  border-bottom: 0.3rem solid #ffa500;
   transform: scaleX(0);
   transition: 0.2s linear;
 }
