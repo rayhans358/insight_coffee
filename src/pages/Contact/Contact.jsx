@@ -2,6 +2,7 @@ import React from "react";
 import { AtSign, Phone, User } from "react-feather";
 
 import "./contactStyling.css";
+// import "./contactStyling.scss";
 
 import cart1 from "../../assets/images/cart1.jpg";
 import cart2 from "../../assets/images/cart2.jpg";

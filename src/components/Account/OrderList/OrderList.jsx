@@ -47,7 +47,7 @@ function OrderList() {
               <th>Jumlah Barang</th>
               <th>Total Belanja</th>
               <th>Status Pembayaran</th>
-              <th className="invoice">Invoice</th>
+              <th>Invoice</th>
             </tr>
           </thead>
           <tbody>

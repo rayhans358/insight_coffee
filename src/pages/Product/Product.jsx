@@ -4,7 +4,6 @@ import './productStyling.css';
 
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import ProductDetail from '../../components/Product/ProductDetail/ProductDetail';
 import ProductCard from '../../components/Product/ProductCard/ProductCard';
 
 function Product() {
@@ -32,7 +31,6 @@ function Product() {
         <ProductCard/>
       </section>
 
-      <ProductDetail/>
       <Footer/>
     </div>
   );

@@ -3,6 +3,7 @@ import { GitHub, Instagram, Linkedin } from "react-feather";
 import { Link } from "react-router-dom";
 
 import './footerStyling.css';
+// import './footerStyling.scss';
 
 function Footer() {
   return (

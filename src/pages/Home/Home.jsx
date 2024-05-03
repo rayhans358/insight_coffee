@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AtSign, Phone, User } from 'react-feather';
 
 import './homeStyling.css';
+// import './homeStyling.scss';
 
 import coffee1 from '../../assets/images/coffee1.jpg';
 import Navbar from '../../components/Navbar/Navbar';

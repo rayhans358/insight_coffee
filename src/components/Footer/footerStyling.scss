@@ -1,0 +1,47 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+  --wht: #fff;
+}
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+
+  .socials {
+    padding: 1rem 0;
+
+    a {
+      color: var(--wht);
+      margin: 1rem;
+
+      &:hover {
+        color: var(--bg);
+      }
+    }
+  }
+
+  .links {
+    margin-bottom: 1rem;
+
+    a {
+      color: var(--wht);
+      padding: 0.7rem 1rem;
+
+      &:hover {
+        color: var(--bg);
+      }
+    }
+  }
+
+  .credit {
+    font-size: 1rem;
+
+    a {
+      color: var(--bg);
+      font-weight: 400;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './aboutStyling.css';
+// import './aboutStyling.scss';
 
 import coffee1 from '../../assets/images/coffee1.jpg';
 import coffee2 from '../../assets/images/coffee2.jpg';

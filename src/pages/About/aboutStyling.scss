@@ -1,0 +1,105 @@
+.about {
+  padding: 7rem 7% 1.4rem;
+
+  h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+
+    span {
+      color: #fd8904;
+    }
+  }
+
+  .row1 {
+    display: flex;
+
+    .about-img1 {
+      flex: 1 1 30rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .content1 {
+      flex: 1 1 50rem;
+      margin-left: 20px;
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 0.8rem;
+        font-size: 2rem;
+        font-weight: 100;
+        line-height: 1.6;
+        text-align: justify;
+      }
+    }
+  }
+
+  .row2 {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 4rem;
+
+    .about-img2 {
+      flex: 1 1 30rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .content2 {
+      flex: 1 1 50rem;
+      margin-right: 20px;
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 0.8rem;
+        font-size: 2rem;
+        font-weight: 100;
+        line-height: 1.6;
+        text-align: justify;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .row1,
+    .row2 {
+      flex-wrap: wrap;
+    }
+
+    .row1 .about-img1 img,
+    .row2 .about-img2 img {
+      height: 24rem;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .row1 .content1,
+    .row2 .content2 {
+      padding: 0;
+    }
+
+    .row1 .content1 h3,
+    .row2 .content2 h3 {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+
+    .row1 .content1 p,
+    .row2 .content2 p {
+      font-size: 1.6rem;
+    }
+  }
+}

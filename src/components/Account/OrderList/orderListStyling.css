@@ -38,6 +38,12 @@
   width: 20%;
 }
 
+.orderList-container .table-orderList .fill-orderContent .invoice:hover {
+  color: #68dd76;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .orderList-container .table-orderList .order-empty {
   padding: 8px;
   text-align: center;

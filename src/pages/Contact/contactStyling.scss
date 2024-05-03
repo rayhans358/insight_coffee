@@ -1,0 +1,208 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+  --wht: #fff;
+}
+
+.contact {
+  padding: 7rem 7% 1.4rem;
+
+  h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    margin: 1rem;
+
+    span {
+      color: #fd8904;
+    }
+  }
+
+  p {
+    text-align: center;
+    max-width: 60rem;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.6;
+  }
+
+  .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+
+    & .map {
+      flex: 1 1 45rem;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    & form {
+      flex: 1 1 45rem;
+      padding: 5rem 2rem;
+      text-align: center;
+
+      span {
+        color: #fd8904;
+      }
+
+      .input-group {
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+        background-color: var(--bg);
+        border: 1px solid #eee;
+        padding-left: 2rem;
+
+        input {
+          width: 100%;
+          padding: 2rem;
+          font-size: 1.7rem;
+          background: none;
+          color: var(--wht);
+        }
+      }
+
+      .button {
+        margin-top: 3rem;
+        display: inline-block;
+        padding: 1rem 3rem;
+        font-size: 1.7rem;
+        color: var(--wht);
+        background-color: var(--primary);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.testimoni {
+  margin-top: 20px;
+
+  .head-testi {
+    padding: 1rem;
+
+    h2 {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-bottom: 3rem;
+      margin: 1rem;
+
+      span {
+        color: #fd8904;
+      }
+    }
+
+    p {
+      text-align: center;
+      max-width: 35rem;
+      margin: auto;
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 2.5;
+      border: 2px solid var(--wht);
+      border-radius: 60px;
+    }
+  }
+
+  .body-testi {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 5px;
+    margin-right: 10px;
+    position: relative;
+
+    .testi-name {
+      text-align: center;
+
+      .name {
+        margin: 0;
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: capitalize;
+      }
+    }
+
+    .testi-image {
+      margin: 20px 0;
+
+      img {
+        border-radius: 50%;
+        width: 25%;
+      }
+    }
+
+    & .center {
+      text-align: center;
+    }
+
+    .testi-text {
+      box-shadow: 0 4px 8px rgba(78, 78, 78, 0.1);
+      border-radius: 15px;
+      background: #fbfbfb;
+      color: #18191f;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      max-height: 192px;
+      height: 192px;
+      overflow: hidden;
+      padding: 15px 35px;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 9;
+      -webkit-box-orient: vertical;
+      position: flex;
+      text-align: justify;
+
+      &::before {
+        content: "\201C";
+        font-size: 60px;
+        position: absolute;
+        left: 15px;
+        top: 0.1px;
+        color: #000000;
+      }
+
+      &::after {
+        content: "\201C";
+        font-size: 60px;
+        position: absolute;
+        right: 13px;
+        top: 1.8em;
+        color: #000000;
+      }
+    }
+
+    .testi-desc::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: #fefefe00;
+      position: absolute;
+      display: flex;
+      margin: auto;
+      left: 52%;
+      transform: translateX(-85%);
+      border-width: 10px;
+      border-style: solid;
+      border-color: #fbfbfb transparent transparent transparent;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+}
