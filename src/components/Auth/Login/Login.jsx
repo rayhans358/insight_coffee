@@ -26,7 +26,7 @@ function Login() {
 
   useEffect(() => {
     setErrMsg('');
-  }, [email,password]);
+  }, [email, password]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -35,7 +35,8 @@ function Login() {
       const response = await loginUser({ email, password });
       const fullName = response?.data?.user?.fullName;
       const accessToken = response?.data?.token;
-      console.log(accessToken, "accessToken");
+      console.log(response?.data, 'response data');
+      console.log(accessToken, 'accessToken data');
 
       localStorage.setItem("auth", JSON.stringify({
         user: response.data.user,
@@ -52,7 +53,7 @@ function Login() {
         timer: 1500
       });
 
-      setAuth({ 
+      setAuth({
         email,
         password,
         accessToken
@@ -85,7 +86,7 @@ function Login() {
       <form onSubmit={handleSubmit}>
         <div className="social-icons">
           <i className="icon">
-            <FontAwesomeIcon icon={faGoogle}/>
+            <FontAwesomeIcon icon={faGoogle} />
           </i>
           <i className="icon">
             <FontAwesomeIcon icon={faFacebookF} />
@@ -99,36 +100,36 @@ function Login() {
         </div>
         <span>or use your email and password</span>
         <label htmlFor="email">
-          Email : 
+          Email :
         </label>
-        <input 
-          type="email" 
+        <input
+          type="email"
           placeholder="Email"
           id="email"
           ref={emailRef}
           autoComplete="off"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          required 
+          required
         />
 
         <label htmlFor="password">
-          Password : 
+          Password :
         </label>
-        <input 
-          type="password" 
+        <input
+          type="password"
           placeholder="Password"
           id="password"
           autoComplete="off"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          required 
+          required
         />
 
         <span>Forgot Your Password?</span>
         <div className="text-login">
           <h4>Don't have an account?</h4>
-          <h4 className="is-login" onClick={() => {navigate('/account/register')}}>Sign Up</h4>
+          <h4 className="is-login" onClick={() => { navigate('/account/register') }}>Sign Up</h4>
         </div>
         <button>Log In</button>
       </form>

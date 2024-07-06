@@ -15,11 +15,22 @@ html {
   scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #222;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #b6895b;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: white;
-  /* min-height: 3000px; */
 }
 
 /* Media Queries */
